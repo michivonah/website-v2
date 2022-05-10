@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Michi von Ah</title>
+  <meta name="mobile-web-app-title" content="Anleitungen">
+  <meta name="apple-mobile-web-app-title" content="Anleitungen">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="description" content="Anleitungen">
+  <meta name="author" content="Michi von Ah">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="expires" content="43200">
+
+  <meta name="theme-color" content="#3498db">
+  <meta name="mobile-web-app-status-bar-style" content="#2980b9">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2980b9">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+<body>
+      <div id="content">
+        <div>
+          <p>Test</p>
+        </div>
+      </div>
+
+
+      <script>
+      // Loading
+      window.addEventListener('load', () => {
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkmode') == "true"){
+            document.body.style.setProperty('--maincolor', '#3498db');
+            document.body.style.setProperty('--secondcolor', '#2980b9');
+            document.body.style.setProperty('--background', '#181818');
+            document.body.style.setProperty('--color', '#fff');
+            console.log('Darkmode activated.');
+        	}
+      });
+      </script>
+</body>
+</html>
