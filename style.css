@@ -1,0 +1,18 @@
+html{scroll-behavior: smooth;}
+
+body{
+   margin: 0;
+   padding: 0;
+   color: var(--color);
+   background: var(--background);
+   text-align: left;
+   font-family: "open sans", sans-serif;
+   scroll-behavior: smooth;
+   --maincolor: #e67e22;
+   --secondcolor: #d35400;
+   --background: #eaf2f8;
+   --color: #000;
+   }
+
+  ::selection {background: var(--maincolor); color: #ffffff; border-radius: 12px;}
+  ::-moz-selection {background: var(--maincolor); color: #ffffff; border-radius: 12px;}
