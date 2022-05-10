@@ -1,1 +1,2 @@
-# website-v2
+# Michi Website 2.0
+### Coming soon
