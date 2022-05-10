@@ -30,13 +30,24 @@
 
 </head>
 <body>
+
+      <nav id="navbar">
+        <div class="inner-width">
+          <a href="#" onclick="scrollToTop();"><img id="logoImg" src="assets/logo/logo_white.svg" alt="Logo"></a>
+          <div id="navbar-links">
+              <a href="#">Home <i class="ai-home navicons"></i></a>
+              <a href="#about">About me <i class="ai-person navicons"></i></a>
+          </div>
+          <a id="toggle-nav"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
+        </div>
+      </nav>
+
       <div id="content">
         <div id="home">
           <p>Michi von Ah</p>
           <p>I'm a boy from switzerland.</p>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#3498DB" d="M40,-10.6C47.7,10.6,46.9,37,30.4,51.2C13.9,65.3,-18.2,67.3,-40.9,51.9C-63.5,36.5,-76.7,3.6,-68.3,-18.5C-59.9,-40.7,-30,-52.2,-6.9,-50C16.2,-47.8,32.4,-31.8,40,-10.6Z" transform="translate(100 100)" />
+            <path fill="#3498DB" d="M60.8,-17.5C68.7,4.6,58.1,35,36.4,50.9C14.8,66.8,-17.9,68.2,-35.9,54.1C-53.9,39.9,-57.2,10.1,-48.7,-12.7C-40.3,-35.5,-20.2,-51.3,3.1,-52.3C26.4,-53.3,52.8,-39.5,60.8,-17.5Z" transform="translate(100 100)" />
           </svg>
         </div>
 
@@ -50,19 +61,25 @@
             </svg>
           </div>
         </div>
+
+        <div id="footer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498DB" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+          <div id="footerContent">
+            <p></p>
+            <a>Imprint</a>
+            <a>Copyright</a>
+            <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
+            <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
+            <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
+          </div>
+        </div>
       </div>
 
 
       <script>
       // Loading
       window.addEventListener('load', () => {
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkmode') == "true"){
-            document.body.style.setProperty('--maincolor', '#3498db');
-            document.body.style.setProperty('--secondcolor', '#2980b9');
-            document.body.style.setProperty('--background', '#181818');
-            document.body.style.setProperty('--color', '#fff');
-            console.log('Darkmode activated.');
-        	}
+        // Code here
       });
       </script>
 </body>
