@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760.5" height="760" viewBox="0 0 760.5 760">
+  <g id="Logo" transform="translate(-160 -160)">
+    <g id="Border" transform="translate(160 160)" fill="none" stroke="#181818" stroke-width="30">
+      <rect width="760" height="760" stroke="none"/>
+      <rect x="5" y="5" width="750" height="750" fill="none"/>
+    </g>
+    <line id="Horizontal" y2="755" transform="translate(540.5 161.5)" fill="none" stroke="#181818" stroke-width="30"/>
+    <line id="Vertical" x2="760" transform="translate(160.5 540.5)" fill="none" stroke="#181818" stroke-width="30"/>
+    <line id="Top-Left" x2="375" y2="375" transform="translate(165 165)" fill="none" stroke="#181818" stroke-width="30"/>
+    <line id="Top-Right" x1="375" y2="375" transform="translate(541.5 164.5)" fill="none" stroke="#181818" stroke-width="30"/>
+  </g>
+</svg>
