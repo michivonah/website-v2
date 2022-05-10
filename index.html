@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en-CH">
 <head>
-  <title>Michi von Ah</title>
-  <meta name="mobile-web-app-title" content="Anleitungen">
-  <meta name="apple-mobile-web-app-title" content="Anleitungen">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="shortcut icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="logo.png">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/akar-icons-fonts"></script>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <meta charset="UTF-8">
-  <meta name="description" content="Anleitungen">
-  <meta name="author" content="Michi von Ah">
-  <meta name="robots" content="noindex">
-  <meta http-equiv="expires" content="43200">
+    <title>Michi von Ah</title>
+    <meta name="mobile-web-app-title" content="Michi">
+    <meta name="apple-mobile-web-app-title" content="Michi">
+    <link rel="icon" type="image/png" href="assets/logo/favicon_256.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo_black.svg">
+    <link rel="shortcut icon" type="image/png" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/logo/favicon_256.png">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta name="keywords" content="Michi, Michi von Ah, von Ah, personalwebsite, website, Michael von Ah, von Ah Michael, von Ah Michi, mva, mivo, Michi v.A.">
+    <meta name="author" content="Michi von Ah">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="expires" content="43200">
 
-  <meta name="theme-color" content="#3498db">
-  <meta name="mobile-web-app-status-bar-style" content="#2980b9">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#2980b9">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="manifest" href="manifest.json">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Michi von Ah">
+    <meta property="og:description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta property="og:image" content="https://michivonah.ch/images/img2.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://michivonah.ch/">
+    <meta property="og:site_name" content="Michi von Ah">
+    <meta property="twitter:title" content="Michi von Ah">
+    <meta property="twitter:description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta property="twitter:image" content="https://michivonah.ch/images/img2.jpeg">
+    <meta name="twitter:image:alt" content="Michi von Ah">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@michivonah">
+    <meta name="twitter:creator" content="@michivonah">
+
+    <meta name="theme-color" content="#3498db">
+    <meta name="mobile-web-app-status-bar-style" content="#2980b9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2980b9">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -37,6 +55,9 @@
           <div id="navbar-links">
               <a href="#">Home</a>
               <a href="#about">About me</a>
+              <a href="#socialmedia">Socialmedia</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact me</a>
           </div>
           <a id="toggleNav"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
         </div>
@@ -45,22 +66,45 @@
       <div id="content">
         <div id="home">
           <div>
-            <p>Michi von Ah</p>
+            <h1>Michi von Ah</h1>
             <p>I'm a boy from switzerland.</p>
+            <button>Scroll down!</button>
           </div>
           <div>
-            <img src="https://michivonah.ch/images/michi2_transparent.png">
+            <img src="assets/bitmoji.png">
           </div>
         </div>
 
         <div id="about">
-          <div>
+          <div class="inner-width">
+            <div id="aboutText">
+              <h1 class="sectionTitle">About me</h1>
+              <p>Hi, my name is Michi von Ah and I'm <var id="age">loading...</var> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). This is my website and here you can find something about me.</p>
+            </div>
+            <div id="aboutImg">
+              <img src="https://michivonah.ch/images/michi2_transparent.png">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#3498DB" d="M40,-10.6C47.7,10.6,46.9,37,30.4,51.2C13.9,65.3,-18.2,67.3,-40.9,51.9C-63.5,36.5,-76.7,3.6,-68.3,-18.5C-59.9,-40.7,-30,-52.2,-6.9,-50C16.2,-47.8,32.4,-31.8,40,-10.6Z" transform="translate(100 100)" />
+              </svg>
+            </div>
           </div>
-          <div id="aboutImg">
-            <img src="https://michivonah.ch/images/michi2_transparent.png">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#3498DB" d="M40,-10.6C47.7,10.6,46.9,37,30.4,51.2C13.9,65.3,-18.2,67.3,-40.9,51.9C-63.5,36.5,-76.7,3.6,-68.3,-18.5C-59.9,-40.7,-30,-52.2,-6.9,-50C16.2,-47.8,32.4,-31.8,40,-10.6Z" transform="translate(100 100)" />
-            </svg>
+        </div>
+
+        <div id="socialmedia">
+          <div class="inner-width">
+            <h1 class="sectionTitle">Socialmedia</h1>
+          </div>
+        </div>
+
+        <div id="projects">
+          <div class="inner-width">
+            <h1 class="sectionTitle">Projects</h1>
+          </div>
+        </div>
+
+        <div id="contact">
+          <div class="inner-width">
+            <h1 class="sectionTitle">Contact me</h1>
           </div>
         </div>
 
@@ -68,35 +112,40 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498DB" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
           <div id="footerContent">
             <p></p>
-            <a>Imprint</a>
-            <a>Copyright</a>
+            <a>Imprint & Copyright</a>
             <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
             <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
             <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
           </div>
 
-          <div id="imprint">
-            <h3>Imprint <i class="ai-book navicons"></i></h3>
-            <p><i class="ai-person"></i> Michael von Ah</p>
-            <p><i class="ai-location"></i> Obwalden, Switzerland</p>
-            <p><i class="ai-envelope"></i> info@michivonah.ch</p>
-          </div>
+          <div id="footerExpanded">
+            <div id="imprint">
+              <h3>Imprint <i class="ai-paper navicons"></i></h3>
+              <p><i class="ai-person"></i> Michael von Ah</p>
+              <p><i class="ai-location"></i> Obwalden, Switzerland</p>
+              <p><i class="ai-envelope"></i> info@michivonah.ch</p>
+            </div>
 
-          <div id="copyright">
-            <h3>Copyright <i class="ai-copy navicons"></i></h3>
-            <p>The content of this page was created by me or I have the rights to use it here.</p>
-            <p>Used resources from others:</p>
-            <ul>
-              <li>Animate on Scroll Libary - michalsnik.github.io/aos</li>
-              <li>Akar Icons - akaricons.com</li>
-              <li>Google Fonts - fonts.google.com</li>
-              <li>BGjar - bgjar.com/</li>
-              <li>Get Waves - getwaves.io</li>
-              <li>Blobmaker - blobmaker.app</li>
-            </ul>
-            <p>All information without guarantee.</p>
+            <div id="copyright">
+              <h3>Copyright <i class="ai-copy navicons"></i></h3>
+              <p>The content of this page was created by me or I have the rights to use it here.</p>
+              <p>Used resources from others:</p>
+              <ul>
+                <li>Animate on Scroll Libary - michalsnik.github.io/aos</li>
+                <li>Akar Icons - akaricons.com</li>
+                <li>Google Fonts - fonts.google.com</li>
+                <li>BGjar - bgjar.com/</li>
+                <li>Get Waves - getwaves.io</li>
+                <li>Blobmaker - blobmaker.app</li>
+              </ul>
+              <p>All information without guarantee.</p>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div id="scroll-top">
+        <i class="ai-chevron-up"></i>
       </div>
 
 
@@ -104,7 +153,24 @@
       // Loading
       window.addEventListener('load', () => {
         // Code here
+        document.getElementById('scroll-top').style.display = "none";
       });
+
+      document.getElementById('scroll-top').addEventListener("click", function(){
+        scrollToTop();
+      });
+
+      function scrollToTop(){
+        var speed = 500;
+        var time = 15;
+        var step = (window.scrollY * -1) / (speed / time),
+        scroll = setInterval(function(){
+        if (window.scrollY != 0){
+            window.scrollBy(0, step);
+        }
+        else clearInterval(scroll);
+        },time);
+      }
       </script>
 </body>
 </html>
