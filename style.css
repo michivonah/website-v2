@@ -101,6 +101,20 @@ body{
      background: var(--theme1);
    }
 
+   #about{
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-items: left;
+   }
+
+   #about img{
+     width: 50%;
+     height: auto;
+   }
+
    #footer{
      margin: 0;
      padding: 0;
