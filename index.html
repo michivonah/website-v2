@@ -80,12 +80,14 @@
 
         <div id="about">
           <div class="inner-width">
-            <div id="aboutText">
-              <h1 class="sectionTitle">About me</h1>
-              <p>Hi, my name is Michi von Ah and I'm <var id="age">loading...</var> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). This is my website and here you can find something about me.</p>
-            </div>
-            <div id="aboutImg">
-              <img src="assets/images/michi2_blob.png">
+            <h1 class="sectionTitle">About me</h1>
+            <div id="aboutContent">
+              <div id="aboutText">
+                <p>Hi, my name is Michi von Ah and I'm <var id="age">loading...</var> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). This is my website and here you can find something about me.</p>
+              </div>
+              <div id="aboutImg">
+                <img src="assets/images/michi2_blob.png">
+              </div>
             </div>
           </div>
         </div>
@@ -94,17 +96,17 @@
           <div class="inner-width">
             <h1 class="sectionTitle">Socialmedia</h1>
             <div id="socialSelection">
-              <input type="radio" id="smInstagram" name="socialmedia" value="instagram" checked>
-              <label for="instagram">Instagram <i class="ai-instagram-fill"></i></label>
+              <input type="radio" id="smInstagram" class="smRadioInput" name="socialmedia" value="instagram" checked>
+              <label for="smInstagram" class="smRadioLabel">Instagram <i class="ai-instagram-fill"></i></label>
 
-              <input type="radio" id="smInstagram2" name="socialmedia" value="instagram2">
-              <label for="instagram2">Instagram Photo <i class="ai-instagram-fill"></i></label>
+              <input type="radio" id="smInstagram2" class="smRadioInput" name="socialmedia" value="instagram2">
+              <label for="smInstagram2" class="smRadioLabel">Instagram Photo <i class="ai-instagram-fill"></i></label>
 
-              <input type="radio" id="smTwitter" name="socialmedia" value="twitter">
-              <label for="instagram">Twitter <i class="ai-twitter-fill"></i></label>
+              <input type="radio" id="smTwitter" class="smRadioInput" name="socialmedia" value="twitter">
+              <label for="smTwitter" class="smRadioLabel">Twitter <i class="ai-twitter-fill"></i></label>
 
-              <input type="radio" id="smGithub" name="socialmedia" value="github">
-              <label for="github">GitHub <i class="ai-github-fill"></i></label>
+              <input type="radio" id="smGithub" class="smRadioInput" name="socialmedia" value="github">
+              <label for="smGithub" class="smRadioLabel">GitHub <i class="ai-github-fill"></i></label>
             </div>
 
             <div id="socialInstagram">
@@ -171,7 +173,7 @@
                 <button>Open <i class="ai-link-out"></i></button>
               </div>
 
-              <div class="project">
+              <div class="project" style="display:none;">
                 <img src="https://escape.michivonah.ch/graphics/media/1.png">
                 <h3>Michi's Escape Room</h3>
                 <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
@@ -245,6 +247,7 @@
         // Code here
         //document.getElementById('scroll-top').style.display = "none";
         // Instagram: https://www.instagram.com/vompictures/?__a=1
+        age(16, 09, 2005);
       });
 
       document.getElementById('scroll-top').addEventListener("click", function(){
@@ -289,6 +292,27 @@
       function closeNavbar(){
         document.getElementById("navbar-links").style.display = "none";
         document.getElementById("closeNavbarPlaceholder").style.display = "none";
+      }
+
+      function age(birthday, birthmonth, birthyear){
+        var birthmonth = birthmonth - 1;
+        var ageText = document.getElementById('age');
+        var date = new Date();
+        var year = date.getFullYear();
+        if(date.getMonth() == birthmonth){
+          if(date.getDate() >= birthday){
+            ageText.innerHTML = Number(year) - birthyear;
+          }
+          else{
+            ageText.innerHTML = Number(year) - birthyear - 1;
+          }
+        }
+        else if(date.getMonth() >= birthmonth){
+          ageText.innerHTML = Number(year) - birthyear;
+        }
+        else if(date.getMonth() <= birthmonth){
+          ageText.innerHTML = Number(year) - birthyear - 1;
+        }
       }
 
       </script>
