@@ -52,6 +52,9 @@
       <nav id="navbar">
         <div class="inner-width">
           <a href="#" onclick="scrollToTop();"><img id="logoImg" src="assets/logo/logo_white.svg" alt="Logo"></a>
+          <div id="closeNavbarPlaceholder" onclick="closeNavbar();">
+            <i class="ai-cross"></i>
+          </div>
           <div id="navbar-links">
               <a href="#">Home</a>
               <a href="#about">About me</a>
@@ -59,7 +62,7 @@
               <a href="#projects">Projects</a>
               <a href="#contact">Contact me</a>
           </div>
-          <a id="toggleNav"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
+          <a id="toggleNav" onclick="toggleSection('navbar-links', 'flex'); toggleSection('closeNavbarPlaceholder', 'block');"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
         </div>
       </nav>
 
@@ -116,19 +119,28 @@
             <div id="socialInstagram">
               <h3>Instagram @vompictures</h3>
               <ul>
-                <li>10+ Followers</li>
-                <li>10+ Posts</li>
+                <li>15+ Followers</li>
+                <li>16+ Posts</li>
               </ul>
               <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/243853880_1043600313059657_706412797689989441_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=YHfphvuNv7UAX_XYccA&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT__giS9BcGsChdLmgez7h1xEx3Lcmn6jTbttkoz3oceQg&oe=628626A3&_nc_sid=7bff83">
             </div>
 
             <div id="socialTwitter">
-              <h3>Instagram @vompictures</h3>
+              <h3>Twitter @michivonah</h3>
               <ul>
                 <li>10+ Followers</li>
                 <li>10+ Posts</li>
               </ul>
-              <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/243853880_1043600313059657_706412797689989441_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=YHfphvuNv7UAX_XYccA&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT__giS9BcGsChdLmgez7h1xEx3Lcmn6jTbttkoz3oceQg&oe=628626A3&_nc_sid=7bff83">
+              <img src="https://pbs.twimg.com/profile_images/1422640518723424262/6yOwhryT_400x400.jpg">
+            </div>
+
+            <div id="socialGithub">
+              <h3>GitHub @michivonah</h3>
+              <ul>
+                <li>20+ public repos</li>
+                <li>Languages: HTML, CSS, JavaScript</li>
+              </ul>
+              <img src="">
             </div>
           </div>
         </div>
@@ -158,6 +170,13 @@
                 <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
                 <button>Open <i class="ai-link-out"></i></button>
               </div>
+
+              <div class="project">
+                <img src="https://escape.michivonah.ch/graphics/media/1.png">
+                <h3>Michi's Escape Room</h3>
+                <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
+                <button>Open <i class="ai-link-out"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -165,6 +184,17 @@
         <div id="contact">
           <div class="inner-width">
             <h1 class="sectionTitle">Contact me</h1>
+            <p>If you want contact me, fill out this form or send a mail to <a class="link" href="mailto:info@michivonah.ch">info@michivonah.ch</a>.</p>
+            <form action="#" method="post" id="contact-form">
+              <input type="hidden" name="_redirect" value="https://michivonah.ch/?formSubmitted=true"/>
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input id="email-field" type="email" name="mail" placeholder="Your E-Mail Adress" required>
+              <input id="subject-field" type="text" name="subject" placeholder="Subject">
+              <textarea id="message-text" placeholder="Your Text" minlength="6" required name="message"></textarea>
+              <input id="terms" type="checkbox" name="terms" required>
+              <label for="terms"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
+              <button name="submit" type="submit">Send <i class="ai-send"></i></button>
+            </form>
           </div>
         </div>
 
@@ -172,7 +202,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498DB" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
           <div id="footerContent">
             <p></p>
-            <a>Imprint & Copyright</a>
+            <a onclick="toggleSection('footerExpanded', 'flex');">Imprint & Copyright</a>
             <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
             <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
             <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
@@ -194,7 +224,7 @@
                 <li>Animate on Scroll Libary - michalsnik.github.io/aos</li>
                 <li>Akar Icons - akaricons.com</li>
                 <li>Google Fonts - fonts.google.com</li>
-                <li>BGjar - bgjar.com/</li>
+                <li>BGjar - bgjar.com</li>
                 <li>Get Waves - getwaves.io</li>
                 <li>Blobmaker - blobmaker.app</li>
               </ul>
@@ -232,6 +262,35 @@
         else clearInterval(scroll);
         },time);
       }
+
+      function toggleSection(sectionName, type){
+        var section = document.getElementById(sectionName);
+        if(section.style.display == "block" || section.style.display == "flex"){
+          section.style.display = "none";
+        }
+        else{
+          section.style.display = type;
+        }
+      }
+
+
+      function toggleClass(className){
+        var elements = document.getElementsByClassName(className);
+        for(var i = 0; i < elements.length; i++){
+          if(elements[i].style.display == "block"){
+            elements[i].style.display = "none";
+          }
+          else{
+            elements[i].style.display = "block";
+          }
+        }
+      }
+
+      function closeNavbar(){
+        document.getElementById("navbar-links").style.display = "none";
+        document.getElementById("closeNavbarPlaceholder").style.display = "none";
+      }
+
       </script>
 </body>
 </html>
