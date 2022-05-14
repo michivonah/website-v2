@@ -59,7 +59,19 @@ body{
    #toggleNav{
      text-align: right;
      color: #fff;
-     margin: 15px 15px 15px 15px;
+     margin: 10px 15px;
+     display: none;
+     float: right;
+     font-size: 26px;
+     text-decoration: none !important;
+   }
+
+   #toggleNav:hover{
+     text-decoration: none !important;
+   }
+
+   #closeNavbarPlaceholder{
+     display: none;
    }
 
    #home{
@@ -125,6 +137,7 @@ body{
      flex-direction: row;
      flex-wrap: wrap;
      justify-content: space-around;
+     align-items: center;
    }
 
    .project{
@@ -135,6 +148,10 @@ body{
      border-radius: var(--borderRadius);
      margin: var(--margin);
      padding: 0 var(--padding) var(--padding) 0;
+   }
+
+   .project:nth-child(2n){
+     margin-top: 100px;
    }
 
    .project img{
@@ -248,18 +265,76 @@ body{
    }
 
    i{
-     text-decoration: none;
+     text-decoration: none !important;
      outline: none;
      font-style: normal;
    }
 
    i:hover{
-     text-decoration: none;
+     text-decoration: none !important;
      outline: none;
    }
 
    var{
      font-style: normal;
+   }
+
+   input, textarea{
+     outline: none;
+   }
+
+   @media screen and (max-width:640px){
+     #navbar-links{
+       display: none;
+       width: 80%;
+       height: 100vh;
+       position: absolute;
+       top: 0;
+       right: 0;
+       margin: 0;
+       background: var(--theme1);
+       color: #fff;
+       font-size: 2rem;
+       flex-direction: column;
+       flex-wrap: wrap;
+       align-content: stretch;
+       align-items: baseline;
+     }
+
+     #navbar-links a{
+       margin: 0;
+       text-decoration: none;
+       padding: 5px;
+       transition: all 250ms linear;
+     }
+
+     #navbar-links a:hover{
+       text-decoration: none;
+       background: var(--theme2);
+       border-radius: 12px;
+       transition: all 250ms linear;
+     }
+
+     #closeNavbarPlaceholder{
+       display: none;
+       width: 20%;
+       height: 100vh;
+       position: absolute;
+       top: 0;
+       left: 0;
+       margin: 0;
+       padding: calc(10% - 2rem);
+       background: var(--theme2);
+       font-size: 2rem;
+     }
+
+     #toggleNav{
+       display: block;
+     }
+
+     .project:nth-child(2n){
+       margin-top: auto;
+     }
    }
 
   ::selection {background: var(--theme1); color: #ffffff; border-radius: var(--borderRadius);}
