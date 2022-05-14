@@ -96,20 +96,20 @@
           <div class="inner-width">
             <h1 class="sectionTitle">Socialmedia</h1>
             <div id="socialSelection">
-              <input type="radio" id="smInstagram" class="smRadioInput" name="socialmedia" value="instagram" checked>
+              <input type="radio" id="smInstagram" class="smRadioInput" name="socialmedia" value="instagram" onchange="toggleSocialmedia();" checked>
               <label for="smInstagram" class="smRadioLabel">Instagram <i class="ai-instagram-fill"></i></label>
 
-              <input type="radio" id="smInstagram2" class="smRadioInput" name="socialmedia" value="instagram2">
+              <input type="radio" id="smInstagram2" class="smRadioInput" name="socialmedia" value="instagram2" onchange="toggleSocialmedia();">
               <label for="smInstagram2" class="smRadioLabel">Instagram Photo <i class="ai-instagram-fill"></i></label>
 
-              <input type="radio" id="smTwitter" class="smRadioInput" name="socialmedia" value="twitter">
+              <input type="radio" id="smTwitter" class="smRadioInput" name="socialmedia" value="twitter" onchange="toggleSocialmedia();">
               <label for="smTwitter" class="smRadioLabel">Twitter <i class="ai-twitter-fill"></i></label>
 
-              <input type="radio" id="smGithub" class="smRadioInput" name="socialmedia" value="github">
+              <input type="radio" id="smGithub" class="smRadioInput" name="socialmedia" value="github" onchange="toggleSocialmedia();">
               <label for="smGithub" class="smRadioLabel">GitHub <i class="ai-github-fill"></i></label>
             </div>
 
-            <div id="socialInstagram">
+            <div id="socialInstagram" class="socialTab">
               <h3>Instagram @michivonah</h3>
               <ul>
                 <li>100+ Followers</li>
@@ -118,7 +118,7 @@
               <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/271764459_5008757899176316_1596717834212695386_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=zv_tPBSgDOoAX869ukp&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT_N0AnOGeZUDyYok8hPfB2XO2gkXYcEtIR6AHTj223vqQ&oe=6285A071&_nc_sid=7bff83">
             </div>
 
-            <div id="socialInstagram">
+            <div id="socialInstagram2" class="socialTab">
               <h3>Instagram @vompictures</h3>
               <ul>
                 <li>15+ Followers</li>
@@ -127,7 +127,7 @@
               <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/243853880_1043600313059657_706412797689989441_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=YHfphvuNv7UAX_XYccA&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT__giS9BcGsChdLmgez7h1xEx3Lcmn6jTbttkoz3oceQg&oe=628626A3&_nc_sid=7bff83">
             </div>
 
-            <div id="socialTwitter">
+            <div id="socialTwitter" class="socialTab">
               <h3>Twitter @michivonah</h3>
               <ul>
                 <li>10+ Followers</li>
@@ -136,7 +136,7 @@
               <img src="https://pbs.twimg.com/profile_images/1422640518723424262/6yOwhryT_400x400.jpg">
             </div>
 
-            <div id="socialGithub">
+            <div id="socialGithub" class="socialTab">
               <h3>GitHub @michivonah</h3>
               <ul>
                 <li>20+ public repos</li>
@@ -152,32 +152,28 @@
             <h1 class="sectionTitle">Projects</h1>
 
             <div id="projectContainer">
-              <div class="project">
-                <img src="https://michivonah.ch/icons/news-logo.png">
-                <h3>N3WS App</h3>
-                <p>a simple rss feed reader</p>
-                <button>Open <i class="ai-link-out"></i></button>
-              </div>
+              <div id="projectRow1" class="projectRow"> <!-- ROW 1 for Projects -->
+                <div class="project">
+                  <img src="https://escape.michivonah.ch/graphics/media/1.png">
+                  <h3>Michi's Escape Room</h3>
+                  <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
+                  <button>Open <i class="ai-link-out"></i></button>
+                </div>
 
-              <div class="project">
-                <img src="https://michivonah.ch/icons/pw-generator.png">
-                <h3>Password Generator</h3>
-                <p>I&lsquo;ve programmed a simple and minimalistic password generator. You can choose from different password types and copy the password afterwards.</p>
-                <button>Open <i class="ai-link-out"></i></button>
+                <div class="project">
+                  <img src="https://michivonah.ch/icons/news-logo.png">
+                  <h3>N3WS App</h3>
+                  <p>a simple rss feed reader</p>
+                  <button>Open <i class="ai-link-out"></i></button>
+                </div>
               </div>
-
-              <div class="project">
-                <img src="https://escape.michivonah.ch/graphics/media/1.png">
-                <h3>Michi's Escape Room</h3>
-                <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
-                <button>Open <i class="ai-link-out"></i></button>
-              </div>
-
-              <div class="project" style="display:none;">
-                <img src="https://escape.michivonah.ch/graphics/media/1.png">
-                <h3>Michi's Escape Room</h3>
-                <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
-                <button>Open <i class="ai-link-out"></i></button>
+              <div id="projectRow2" class="projectRow"> <!-- ROW 2 for Projects -->
+                <div class="project">
+                  <img src="https://michivonah.ch/icons/pw-generator.png">
+                  <h3>Password Generator</h3>
+                  <p>I&lsquo;ve programmed a simple and minimalistic password generator. You can choose from different password types and copy the password afterwards.</p>
+                  <button>Open <i class="ai-link-out"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -232,6 +228,8 @@
               </ul>
               <p>All information without guarantee.</p>
             </div>
+
+            <p style="display:none;">&#169; 2022</p>
           </div>
         </div>
       </div>
@@ -248,6 +246,7 @@
         //document.getElementById('scroll-top').style.display = "none";
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
+        toggleSocialmedia();
       });
 
       document.getElementById('scroll-top').addEventListener("click", function(){
@@ -292,6 +291,17 @@
       function closeNavbar(){
         document.getElementById("navbar-links").style.display = "none";
         document.getElementById("closeNavbarPlaceholder").style.display = "none";
+      }
+
+      function toggleSocialmedia(){
+        var tabs = document.getElementsByClassName('socialTab');
+        for(var i = 0; i < tabs.length; i++){
+          var currentTabId = tabs[i].id;
+          var currentRadioButton = currentTabId.replace("social", "sm");;
+          var state = document.getElementById(currentRadioButton).checked;
+          if(state == true) document.getElementById(tabs[i].id).style.display = "block";
+          else document.getElementById(tabs[i].id).style.display = "none";
+        }
       }
 
       function age(birthday, birthmonth, birthyear){
