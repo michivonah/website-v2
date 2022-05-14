@@ -113,18 +113,45 @@ body{
      background: var(--theme1);
    }
 
-   #about{
+   #aboutContent{
      width: 100%;
      display: flex;
-     flex-direction: row;
+     flex-direction: row-reverse;
      flex-wrap: wrap;
      justify-content: space-around;
-     align-items: left;
+     align-content: space-around;
    }
 
-   #about img{
+   #aboutText, #aboutImg{
      width: 50%;
-     height: auto;
+   }
+
+   #aboutImg img{
+     width: 80%;
+   }
+
+   #socialmedia{
+     margin: auto;
+   }
+
+   #socialSelection input[type=radio]{
+     display: none;
+   }
+
+   #socialSelection label{
+     font-size: 1.1rem;
+     border: none;
+     border-bottom: 2px solid var(--theme1);
+     user-select: none;
+     transition: all 250ms linear;
+     padding: 5px;
+     margin: 10px 0;
+     margin-left: -5px;
+   }
+
+   #socialSelection label:hover, .smRadioInput:checked + .smRadioLabel{
+     background: var(--theme1);
+     transition: all 250ms linear;
    }
 
    #projects{
