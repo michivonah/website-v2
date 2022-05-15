@@ -15,6 +15,7 @@ body{
    --margin: 15px;
    --padding: 15px;
    --borderRadius: 12px;
+   --font: "open sans", sans-serif;
    }
 
    #content{
@@ -118,19 +119,23 @@ body{
    /* About Section */
    #aboutContent{
      width: 100%;
+     height: auto;
+     margin: 0;
      display: flex;
      flex-direction: row-reverse;
-     flex-wrap: wrap;
+     flex-wrap: nowrap;
      justify-content: space-around;
      align-content: space-around;
    }
 
    #aboutText, #aboutImg{
-     width: 50%;
+     width: 100%;
+     height: auto;
    }
 
    #aboutImg img{
      width: 80%;
+     height: auto;
    }
 
    /* Socialmedia Section */
@@ -174,6 +179,47 @@ body{
 
    .socialTab img{
      max-width: 80%;
+   }
+
+   #insta2Container{
+     width: 100%;
+     height: auto;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-around;
+     align-content: stretch;
+     align-items: stretch;
+   }
+
+   #insta2Container img{
+     width: 50%;
+     border-radius: var(--borderRadius);
+     transition: all 300ms linear;
+   }
+
+   #insta2ImgContainer{
+     width: 80%;
+     height: auto;
+     margin: 10px 10%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-around;
+     align-content: center;
+     align-items: baseline;
+   }
+
+   #insta2ImgContainer img{
+     width: 30%;
+     height: auto;
+     flex-shrink: 1;
+     border-radius: var(--borderRadius);
+     transition: all 300ms linear;
+   }
+
+   #insta2ImgContainer img:hover, #socialInstagram2 img:hover{
+     border-radius: 50%;
    }
 
    /* Project Section */
@@ -235,6 +281,106 @@ body{
 
    .project button:hover{
      background: var(--theme1);
+   }
+
+   /* Contact Section */
+   #contact input{
+     width: calc(100% - 20px);
+     height: auto;
+     font-size: 1em;
+     font-family: var(--font);
+     outline: none;
+     background: var(--theme1);
+     color: #fff;
+     border: none;
+     border-radius: 8px;
+     margin: 10px 0;
+     padding: 5px 10px;
+   }
+
+   #contactNames{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     align-content: stretch;
+   }
+
+   #contactNames input{
+     width: calc(95% - 20px);
+   }
+
+   #contactNames input:nth-child(1){
+     margin: 10px 10px 10px 0;
+   }
+
+   #contactNames input:nth-child(2){
+     margin: 10px 0 10px 10px;
+   }
+
+   #contact textarea{
+     width: calc(100% - 20px);
+     height: auto;
+     min-height: 200px;
+     font-size: 1em;
+     font-family: var(--font);
+     outline: none;
+     background: var(--theme1);
+     color: #fff;
+     border: none;
+     border-radius: 8px;
+     margin: 10px 0;
+     padding: 5px 10px;
+     resize: vertical;
+   }
+
+   #termsLabel p{
+     max-width: calc(90% - 45px);
+     user-select: none;
+     text-align: justify;
+     margin: 0 10px;
+   }
+
+   #contact input[type="checkbox"]{
+     height: 0;
+     width: 0;
+     opacity: 0;
+   }
+
+   #contact input[type="checkbox"]+label::before{
+     width: 15px;
+     height: 15px;
+     border-radius: 4px;
+     border: 2px solid var(--theme1);
+     background: var(--background);
+     display: block;
+     content: "";
+     margin: 10px 0;
+     float: left;
+   }
+
+   #contact input[type="checkbox"]:checked+label::before{
+     box-shadow: inset 0px var(--background);
+     background: var(--theme1);
+   }
+
+   #contact button{
+     width: calc(100% - 20px);
+     height: auto;
+     font-size: 1em;
+     font-family: var(--font);
+     outline: none;
+     background: var(--theme1);
+     color: #fff;
+     border: 2px solid transparent;
+     border-radius: 8px;
+     margin: 20px 0;
+     padding: 5px 10px;
+   }
+
+   #contact button:hover{
+     background: var(--theme2);
+     border: 2px dotted;
    }
 
    /* Footer & imprint */
@@ -304,7 +450,13 @@ body{
      content: "#";
      color: var(--theme2);
      margin: 0 10px 0 0;
-     user-select: auto;
+     user-select: none;
+   }
+
+   @media screen and (max-width:640px){
+     .sectionTitle::before{
+       margin: 0 10px 0 10px;
+     }
    }
 
    /* General stylings */
@@ -335,6 +487,10 @@ body{
 
    input, textarea{
      outline: none;
+   }
+
+   input::placeholder, textarea::placeholder{
+     color: inherit;
    }
 
    @media screen and (max-width:640px){
@@ -387,6 +543,12 @@ body{
        display: block;
      }
 
+     /* About Section*/
+     #aboutContent{
+       flex-wrap: wrap;
+       flex-direction: column-reverse;
+     }
+
      /* Socialmedia Section */
      #socialSelection label{
        font-size: 0.9rem;
@@ -400,6 +562,24 @@ body{
      /* Projects Section */
      #projectRow2{
        padding-top: 0;
+     }
+
+     /* Contact Section */
+     #contact input, #contact textarea, #contactNames input, #contactNames input:nth-child(1){
+       margin: 10px;
+       width: calc(95% - 20px);
+     }
+
+     #contactNames{
+       flex-wrap: wrap;
+     }
+
+     #contact input[type="checkbox"]+label::before{
+       margin: 10px;
+     }
+
+     #contact button{
+       margin: 20px 10px;
      }
    }
 
