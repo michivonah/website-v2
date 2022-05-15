@@ -284,11 +284,11 @@
       <script>
       // Loading
       window.addEventListener('load', () => {
-        // Code here
-        //document.getElementById('scroll-top').style.display = "none";
+        document.getElementById('scroll-top').style.display = "none";
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
+        // AOS.init({disable: 'mobile'});
       });
 
       document.getElementById('scroll-top').addEventListener("click", function(){
@@ -366,6 +366,32 @@
           ageText.innerHTML = Number(year) - birthyear - 1;
         }
       }
+
+      window.addEventListener('scroll', function(e) {
+        var navbar = document.getElementById('navbar');
+        var scrollTop = document.getElementById('scroll-top');
+        if(this.scrollY > 20){
+          navbar.style.background = "var(--theme1)";
+          navbar.style.color = "#fff";
+          scrollTop.style.display = "flex";
+        }
+        else{
+          if(window.innerWidth <= 640){
+            if(document.getElementById('navbar-links').style.display == "block"){
+              navbar.style.background = "var(--theme1)";
+              scrollTop.style.display = "none";
+            }
+            else{
+              navbar.style.background = "transparent";
+              scrollTop.style.display = "none";
+            }
+          }
+          else{
+            navbar.style.background = "transparent";
+            scrollTop.style.display = "none";
+          }
+        }
+      });
 
       </script>
 </body>
