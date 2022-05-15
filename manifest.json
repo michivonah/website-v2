@@ -1,0 +1,32 @@
+{
+  "name": "Michi von Ah",
+  "short_name": "Michi",
+  "description": "Hi! I'm Michi von Ah and this is my website.",
+  "lang": "en-CH",
+  "orientation": "any",
+  "theme_color": "#3498db",
+  "background_color": "#2980b9",
+  "start_url": "https://michivonah.ch",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://michivonah.ch/icons/logo/favicon_128.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://michivonah.ch/icons/logo/favicon_256.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://michivonah.ch/icons/logo/favicon_256.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://michivonah.ch/icons/logo/favicon_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
