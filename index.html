@@ -100,40 +100,67 @@
               <label for="smInstagram" class="smRadioLabel">Instagram <i class="ai-instagram-fill"></i></label>
 
               <input type="radio" id="smInstagram2" class="smRadioInput" name="socialmedia" value="instagram2" onchange="toggleSocialmedia();">
-              <label for="smInstagram2" class="smRadioLabel">Instagram Photo <i class="ai-instagram-fill"></i></label>
+              <label for="smInstagram2" class="smRadioLabel">Instagram <i class="ai-instagram-fill"></i></label>
 
               <input type="radio" id="smTwitter" class="smRadioInput" name="socialmedia" value="twitter" onchange="toggleSocialmedia();">
-              <label for="smTwitter" class="smRadioLabel">Twitter <i class="ai-twitter-fill"></i></label>
+              <label for="smTwitter" class="smRadioLabel" style="display: none;">Twitter <i class="ai-twitter-fill"></i></label>
 
               <input type="radio" id="smGithub" class="smRadioInput" name="socialmedia" value="github" onchange="toggleSocialmedia();">
               <label for="smGithub" class="smRadioLabel">GitHub <i class="ai-github-fill"></i></label>
+
+              <input type="radio" id="smLinkedin" class="smRadioInput" name="socialmedia" value="linkedin" onchange="toggleSocialmedia();">
+              <label for="smLinkedin" class="smRadioLabel">LinkedIn <i class="ai-linkedin-fill"></i></label>
             </div>
 
             <div id="socialInstagram" class="socialTab">
-              <h3>Instagram @michivonah</h3>
-              <ul>
-                <li>100+ Followers</li>
-                <li>8+ Posts</li>
-              </ul>
-              <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/271764459_5008757899176316_1596717834212695386_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=zv_tPBSgDOoAX869ukp&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT_N0AnOGeZUDyYok8hPfB2XO2gkXYcEtIR6AHTj223vqQ&oe=6285A071&_nc_sid=7bff83">
+              <div>
+                <h3>Instagram @michivonah</h3>
+                <ul>
+                  <li>100+ Followers</li>
+                  <li>8+ Posts</li>
+                  <li>Lifestyle</li>
+                </ul>
+                <button>Follow!</button>
+                <button>Get QR-Code</button>
+              </div>
+              <div>
+                <img src="assets/socialmedia/michi_pb.jpeg">
+              </div>
             </div>
 
             <div id="socialInstagram2" class="socialTab">
-              <h3>Instagram @vompictures</h3>
-              <ul>
-                <li>15+ Followers</li>
-                <li>16+ Posts</li>
-              </ul>
-              <img src="https://instagram.feml1-1.fna.fbcdn.net/v/t51.2885-19/243853880_1043600313059657_706412797689989441_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.feml1-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=YHfphvuNv7UAX_XYccA&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT__giS9BcGsChdLmgez7h1xEx3Lcmn6jTbttkoz3oceQg&oe=628626A3&_nc_sid=7bff83">
+              <div id="insta2Container">
+                <div>
+                  <h3>Instagram @vompictures</h3>
+                  <ul>
+                    <li>15+ Followers</li>
+                    <li>16+ Posts</li>
+                    <li>Photography, Nature, Switzerland</li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="assets/socialmedia/img14.jpeg">
+                </div>
+              </div>
+              <div id="insta2ImgContainer">
+                <img src="assets/socialmedia/img14.jpeg">
+                <img src="assets/socialmedia/img15.jpeg">
+                <img src="assets/socialmedia/img20.jpg">
+              </div>
             </div>
 
             <div id="socialTwitter" class="socialTab">
               <h3>Twitter @michivonah</h3>
-              <ul>
-                <li>10+ Followers</li>
-                <li>10+ Posts</li>
-              </ul>
-              <img src="https://pbs.twimg.com/profile_images/1422640518723424262/6yOwhryT_400x400.jpg">
+              <div>
+                <div>
+                  <ul>
+                    <li>150+ Tweets</li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="assets/tweets/tweet1.png">
+                </div>
+              </div>
             </div>
 
             <div id="socialGithub" class="socialTab">
@@ -141,6 +168,17 @@
               <ul>
                 <li>20+ public repos</li>
                 <li>Languages: HTML, CSS, JavaScript</li>
+                <li>000+ Commits</li>
+                <button>Read my code!</button>
+              </ul>
+              <img src="assets/socialmedia/code-snippet.svg">
+            </div>
+
+            <div id="socialLinkedin" class="socialTab">
+              <h3>LinkedIn Michi von Ah</h3>
+              <ul>
+                <li></li>
+                <li>Competences: HTML, CSS</li>
               </ul>
               <img src="">
             </div>
@@ -185,12 +223,15 @@
             <p>If you want contact me, fill out this form or send a mail to <a class="link" href="mailto:info@michivonah.ch">info@michivonah.ch</a>.</p>
             <form action="#" method="post" id="contact-form">
               <input type="hidden" name="_redirect" value="https://michivonah.ch/?formSubmitted=true"/>
-              <input type="text" name="name" placeholder="Your Name" required>
+              <div id="contactNames">
+                <input type="text" name="surname" placeholder="Your Surname" required>
+                <input type="text" name="lastname" placeholder="Your Lastname" required>
+              </div>
               <input id="email-field" type="email" name="mail" placeholder="Your E-Mail Adress" required>
               <input id="subject-field" type="text" name="subject" placeholder="Subject">
               <textarea id="message-text" placeholder="Your Text" minlength="6" required name="message"></textarea>
               <input id="terms" type="checkbox" name="terms" required>
-              <label for="terms"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
+              <label for="terms" id="termsLabel"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
               <button name="submit" type="submit">Send <i class="ai-send"></i></button>
             </form>
           </div>
@@ -225,6 +266,7 @@
                 <li>BGjar - bgjar.com</li>
                 <li>Get Waves - getwaves.io</li>
                 <li>Blobmaker - blobmaker.app</li>
+                <li>codeimg - codeimg.io</li>
               </ul>
               <p>All information without guarantee.</p>
             </div>
