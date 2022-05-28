@@ -49,6 +49,11 @@
 </head>
 <body>
 
+      <div id="loadingScreen">
+        <div id="loader">
+        </div>
+      </div>
+
       <nav id="navbar">
         <div class="inner-width">
           <a href="#" onclick="scrollToTop();"><img id="logoImg" src="assets/logo/logo_white.svg" alt="Logo"></a>
@@ -71,7 +76,7 @@
           <div>
             <h1>Michi von Ah</h1>
             <p>I'm a boy from switzerland.</p>
-            <button>Scroll down!</button>
+            <button onclick="scrollDown();">Scroll down!</button>
           </div>
           <div>
             <img src="assets/bitmoji.png">
@@ -82,17 +87,17 @@
           <div class="inner-width">
             <h1 class="sectionTitle">About me</h1>
             <div id="aboutContent">
-              <div id="aboutText">
+              <div id="aboutText" data-aos="fade-left">
                 <p>Hi, my name is Michi von Ah and I'm <var id="age">loading...</var> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). This is my website and here you can find something about me.</p>
               </div>
-              <div id="aboutImg">
+              <div id="aboutImg" data-aos="fade-right">
                 <img src="assets/images/michi2_blob.png">
               </div>
             </div>
           </div>
         </div>
 
-        <div id="socialmedia">
+        <div id="socialmedia" data-aos="fade-left">
           <div class="inner-width">
             <h1 class="sectionTitle">Socialmedia</h1>
             <div id="socialSelection">
@@ -113,18 +118,20 @@
             </div>
 
             <div id="socialInstagram" class="socialTab">
-              <div>
-                <h3>Instagram @michivonah</h3>
-                <ul>
-                  <li>100+ Followers</li>
-                  <li>8+ Posts</li>
-                  <li>Lifestyle</li>
-                </ul>
-                <button>Follow!</button>
-                <button>Get QR-Code</button>
-              </div>
-              <div>
-                <img src="assets/socialmedia/michi_pb.jpeg">
+              <div id="insta1Container">
+                <div>
+                  <h3>Instagram @michivonah</h3>
+                  <ul>
+                    <li>200+ Followers</li>
+                    <li>10+ Posts</li>
+                    <li>Lifestyle, Travel &amp; me</li>
+                  </ul>
+                  <button onclick="window.open('https://instagram.com/michivonah')">Follow!</button>
+                  <button>Get QR-Code</button>
+                </div>
+                <div>
+                  <img src="assets/socialmedia/michi_pb.jpeg">
+                </div>
               </div>
             </div>
 
@@ -134,9 +141,12 @@
                   <h3>Instagram @vompictures</h3>
                   <ul>
                     <li>15+ Followers</li>
-                    <li>16+ Posts</li>
+                    <li>19+ Posts</li>
+                    <li>225+ Likes (total)</li>
+                    <li>12+ Likes (average per post)</li>
                     <li>Photography, Nature, Switzerland</li>
                   </ul>
+                  <button onclick="window.open('https://instagram.com/vompictures')">Follow now!</button>
                 </div>
                 <div>
                   <img src="assets/socialmedia/img14.jpeg">
@@ -164,14 +174,20 @@
             </div>
 
             <div id="socialGithub" class="socialTab">
-              <h3>GitHub @michivonah</h3>
-              <ul>
-                <li>20+ public repos</li>
-                <li>Languages: HTML, CSS, JavaScript</li>
-                <li>000+ Commits</li>
-                <button>Read my code!</button>
-              </ul>
-              <img src="assets/socialmedia/code-snippet.svg">
+              <div id="githubContainer">
+                <div>
+                  <h3>GitHub @michivonah</h3>
+                  <ul>
+                    <li>20+ public repos</li>
+                    <li>Languages: HTML, CSS &amp; JavaScript</li>
+                    <li>1&prime;180+ Commits</li>
+                    <button onclick="window.open('https://github.michivonah.ch')">Read my code!</button>
+                  </ul>
+                </div>
+                <div>
+                  <img src="assets/socialmedia/code-snippet.svg">
+                </div>
+              </div>
             </div>
 
             <div id="socialLinkedin" class="socialTab">
@@ -191,33 +207,33 @@
 
             <div id="projectContainer">
               <div id="projectRow1" class="projectRow"> <!-- ROW 1 for Projects -->
-                <div class="project">
+                <div class="project" data-aos="fade-right">
                   <img src="https://escape.michivonah.ch/graphics/media/1.png">
                   <h3>Michi's Escape Room</h3>
                   <p>As a final project for school, I programmed an Escape Room game. For this I used the programming languages HTML, CSS and JavaScript. If you want to know more about the development process of my game, click <a class="link" href="https://michivonah.notion.site/Michi-s-Escape-Room-9ba11f6e71a6449b9bdc222cd7c7f647">here <i class="ai-link-out"></i></a>. If you want to play it, click the button below. Good luck.</p>
-                  <button>Open <i class="ai-link-out"></i></button>
+                  <button onclick="window.open('https://escape.michivonah.ch')">Open <i class="ai-link-out"></i></button>
                 </div>
 
-                <div class="project">
+                <div class="project" data-aos="fade-right">
                   <img src="https://michivonah.ch/icons/news-logo.png">
                   <h3>N3WS App</h3>
-                  <p>a simple rss feed reader</p>
-                  <button>Open <i class="ai-link-out"></i></button>
+                  <p>I have created a simple RSS feed reader. It helps you to manage your news. You can use it on any device and install it as a PWA (Progressive web app). There may still be some bugs and errors as the app is still under development. As soon as the final version is ready, you will find it here.</p>
+                  <button onclick="window.open('https://news.michivonah.ch')">Open <i class="ai-link-out"></i></button>
                 </div>
               </div>
               <div id="projectRow2" class="projectRow"> <!-- ROW 2 for Projects -->
-                <div class="project">
+                <div class="project" data-aos="fade-left">
                   <img src="https://michivonah.ch/icons/pw-generator.png">
                   <h3>Password Generator</h3>
                   <p>I&lsquo;ve programmed a simple and minimalistic password generator. You can choose from different password types and copy the password afterwards.</p>
-                  <button>Open <i class="ai-link-out"></i></button>
+                  <button onclick="window.open('https://passwords.michivonah.ch')">Open <i class="ai-link-out"></i></button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="contact">
+        <div id="contact" data-aos="fade-left">
           <div class="inner-width">
             <h1 class="sectionTitle">Contact me</h1>
             <p>If you want contact me, fill out this form or send a mail to <a class="link" href="mailto:info@michivonah.ch">info@michivonah.ch</a>.</p>
@@ -234,6 +250,7 @@
               <label for="terms" id="termsLabel"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
               <button name="submit" type="submit">Send <i class="ai-send"></i></button>
             </form>
+            <p>Hint: The form is currently disabled because the site is stil under construction. It can still change.</p>
           </div>
         </div>
 
@@ -241,7 +258,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498DB" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
           <div id="footerContent">
             <p></p>
-            <a onclick="toggleSection('footerExpanded', 'flex');">Imprint & Copyright</a>
+            <a href="#footerExpanded" onclick="toggleSection('footerExpanded', 'flex');">Imprint & Copyright</a>
             <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
             <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
             <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
@@ -253,6 +270,7 @@
               <p><i class="ai-person"></i> Michael von Ah</p>
               <p><i class="ai-location"></i> Obwalden, Switzerland</p>
               <p><i class="ai-envelope"></i> info@michivonah.ch</p>
+              <p><i class="ai-phone"></i> 078 247 15 16 (for messages, don&prime;t use for calling)</p>
             </div>
 
             <div id="copyright">
@@ -288,7 +306,10 @@
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
-        // AOS.init({disable: 'mobile'});
+        //AOS.init({disable: 'mobile'});
+        AOS.init({disable: true});
+        // hide loadingscreen
+        document.getElementById('loadingScreen').style.display = "none";
       });
 
       document.getElementById('scroll-top').addEventListener("click", function(){
@@ -305,6 +326,11 @@
         }
         else clearInterval(scroll);
         },time);
+      }
+
+      function scrollDown(){
+        window.scroll(0, 1000);
+        //window.scrollBy(0, 1000);
       }
 
       function toggleSection(sectionName, type){
