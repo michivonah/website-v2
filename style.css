@@ -204,7 +204,7 @@ body{
      border-bottom: 2px solid var(--theme1);
      user-select: none;
      transition: all 250ms linear;
-     padding: 5px;
+     padding: 5px 10px;
      margin: 10px 0;
      margin-left: -5px;
    }
