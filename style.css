@@ -11,6 +11,7 @@ body{
    overflow-x: hidden;
    --theme1: #3498db;
    --theme2: #2980b9;
+   --red: #e74c3c;
    --background: #181818;
    --color: #fff;
    --margin: 15px;
@@ -182,6 +183,7 @@ body{
    #aboutText, #aboutImg{
      width: 100%;
      height: auto;
+     text-align: justify;
    }
 
    #aboutImg img{
@@ -517,6 +519,27 @@ body{
      border: 2px dotted;
    }
 
+   @keyframes shake{
+     0%{
+       transform: translate(0, 0);
+     }
+     15%{
+       transform: translate(1rem, 0);
+     }
+     35%{
+       transform: translate(-1rem, 0);
+     }
+     55%{
+       transform: translate(1rem, 0);
+     }
+     80%{
+       transform: translate(-1rem, 0);
+     }
+     10%{
+       transform: translate(0, 0);
+     }
+   }
+
    /* Footer & imprint */
    #footer{
      margin: 0;
@@ -628,6 +651,11 @@ body{
    }
 
    @media screen and (max-width:640px){
+     /* General */
+     .inner-width p{
+       margin: auto 10px;
+     }
+
      /* Navbar */
      #navbar-links{
        display: none;
