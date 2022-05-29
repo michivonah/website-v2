@@ -229,6 +229,13 @@
                   <p>I&lsquo;ve programmed a simple and minimalistic password generator. You can choose from different password types and copy the password afterwards.</p>
                   <button onclick="window.open('https://passwords.michivonah.ch')">Open <i class="ai-link-out"></i></button>
                 </div>
+
+                <div class="project" data-aos="fade-left">
+                  <img src="assets/jump.png">
+                  <h3>Michi&prime;s Blog</h3>
+                  <p>I have created a blog with Notion. There I write small texts from time to time. The blog is written in German.</p>
+                  <button onclick="window.open('https://blog.michivonah.ch')">Open <i class="ai-link-out"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -241,21 +248,21 @@
             <form action="#" method="post" id="contact-form">
               <input type="hidden" name="_redirect" value="https://michivonah.ch/?formSubmitted=true"/>
               <div id="contactNames">
-                <input type="text" name="surname" placeholder="Your Surname" required>
-                <input type="text" name="lastname" placeholder="Your Lastname" required>
+                <input id="surname-field" type="text" name="surname" placeholder="Your Surname" required>
+                <input id="lastname-field" type="text" name="lastname" placeholder="Your Lastname" required>
               </div>
               <input id="email-field" type="email" name="mail" placeholder="Your E-Mail Adress" required>
               <input id="subject-field" type="text" name="subject" placeholder="Subject">
               <textarea id="message-text" placeholder="Your Text" minlength="6" required name="message"></textarea>
               <input id="terms" type="checkbox" name="terms" required>
               <label for="terms" id="termsLabel"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
-              <button name="submit" type="submit">Send <i class="ai-send"></i></button>
+              <button id="submitContactForm" name="submit" type="button" onclick="checkForm();">Send <i class="ai-send"></i></button>
             </form>
             <p>Hint: The form is currently disabled because the site is stil under construction. It can still change.</p>
           </div>
         </div>
 
-        <div id="footer">
+        <div id="footer" data-aos="fade-up">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3498DB" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
           <div id="footerContent">
             <p></p>
@@ -307,8 +314,8 @@
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
-        //AOS.init({disable: 'mobile'});
-        AOS.init({disable: true});
+        AOS.init({disable: 'mobile'});
+        //AOS.init({disable: true});
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
@@ -318,20 +325,29 @@
       });
 
       function scrollToTop(){
-        var speed = 500;
-        var time = 15;
-        var step = (window.scrollY * -1) / (speed / time),
-        scroll = setInterval(function(){
-        if (window.scrollY != 0){
-            window.scrollBy(0, step);
+        if(navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') || navigator.userAgent.includes('Mac')){
+          window.scroll(0, 0);
         }
-        else clearInterval(scroll);
-        },time);
+        else{
+          var speed = 500;
+          var time = 15;
+          var step = (window.scrollY * -1) / (speed / time),
+          scroll = setInterval(function(){
+          if (window.scrollY != 0){
+              window.scrollBy(0, step);
+          }
+          else clearInterval(scroll);
+          },time);
+        }
       }
 
       function scrollDown(){
-        window.scroll(0, 1000);
-        //window.scrollBy(0, 1000);
+        if(navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') || navigator.userAgent.includes('Mac')){
+          window.scroll(0, 1000);
+        }
+        else{
+          window.scrollBy(0, 1000);
+        }
       }
 
       function toggleSection(sectionName, type){
@@ -373,6 +389,31 @@
           if(state == true) document.getElementById(tabs[i].id).style.display = "block";
           else document.getElementById(tabs[i].id).style.display = "none";
         }
+      }
+
+      function checkForm(){
+        var requiredFields = ['surname-field', 'lastname-field', 'email-field', 'message-text', 'terms'];
+        var errorCount = 0;
+        for(var i = 0; i < requiredFields.length; i++){
+          var currentElement = document.getElementById(requiredFields[i]);
+          currentElement.style.animation = null;
+          if(currentElement.checkValidity() == true){
+            currentElement.style.background = "var(--theme1)";
+            currentElement.style.animation = null;
+          }
+          else{
+            currentElement.style.background = "var(--red)";
+            currentElement.style.animation = "shake 250ms ease";
+            errorCount++;
+          }
+        }
+        if(errorCount <= 0){
+          document.getElementById("contact-form").submit();
+        }
+      }
+
+      function sendWhatsapp(){
+        // https://wa.me/41782471516?text=
       }
 
       function age(birthday, birthmonth, birthyear){
