@@ -18,6 +18,7 @@ body{
    --padding: 15px;
    --borderRadius: 12px;
    --font: "open sans", sans-serif;
+   --transition: all 300ms linear;
    }
 
    #content{
@@ -191,6 +192,31 @@ body{
      height: auto;
      user-select: none;
    }
+
+   #aboutSocial a{
+     color: #fff;
+     margin: 10px;
+     font-size: 26px;
+     transition: var(--transition);
+     outline: none;
+   }
+
+   #aboutSocial a:hover{
+     color: var(--theme1);
+     text-decoration: none !important;
+   }
+
+   #aboutSocial a:hover:nth-child(1){ color: #8a3ab9; }
+
+   #aboutSocial a:hover:nth-child(2){ color: #1DA1F2; }
+
+   #aboutSocial a:hover:nth-child(3){ color: #4267B2; }
+
+   #aboutSocial a:hover:nth-child(4){ color: #f1c40f; }
+
+   #aboutSocial a:hover:nth-child(5){ color: #1DB954; }
+
+   #aboutSocial a:hover:nth-child(6){ color: #0072b1; }
 
    /* Socialmedia Section */
    #socialmedia{
@@ -413,6 +439,49 @@ body{
      background: var(--theme1);
    }
 
+   /* FAQ Section */
+   #faq{
+     margin: 0;
+   }
+
+   .faqObject{
+     width: calc(100% - 30px);
+     height: auto;
+     background: var(--theme1);
+     color: #fff;
+     margin: 15px;
+     /*padding: 5px 15px;*/
+     padding: 0 0 5px 0;
+     border-radius: 8px;
+     position: relative;
+     text-align: justify;
+     user-select: none;
+   }
+
+   .faqObject i{
+     font-size: 24px;
+     margin: 15px;
+     display: inline-flex;
+     transform: rotate(0deg);
+     transition: var(--transition);
+   }
+
+   .faqObject h3{
+     display: inline-flex;
+     width: 80%;
+     margin: 0 15px;
+   }
+
+   .faqObject p{
+     margin: 15px;
+     user-select: text;
+   }
+
+   .faqAnswer{
+     display: none;
+     padding: 0 15px 15px 5px;
+   }
+
    /* Contact Section */
    #contact input{
      width: calc(100% - 20px);
@@ -598,6 +667,10 @@ body{
    }
 
    /* Section defaults */
+   .section{
+     margin: 15px 0;
+   }
+
    .sectionTitle{
      color: var(--color);
      font-size: 2rem;
@@ -737,6 +810,16 @@ body{
      /* Projects Section */
      #projectRow2{
        padding-top: 0;
+     }
+
+     /* FAQ Section */
+     .faqObject{
+       padding: 0 0 15px 0;
+     }
+
+     .faqObject h3{
+       width: 70%;
+       margin: auto 5px auto 10px;
      }
 
      /* Contact Section */
