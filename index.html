@@ -25,13 +25,13 @@
 
     <meta property="og:title" content="Michi von Ah">
     <meta property="og:description" content="Hi! I'm Michi von Ah and this is my website.">
-    <meta property="og:image" content="https://michivonah.ch/images/img2.jpeg">
+    <meta property="og:image" content="assets/logo/favicon_256.png">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://michivonah.ch/">
     <meta property="og:site_name" content="Michi von Ah">
     <meta property="twitter:title" content="Michi von Ah">
     <meta property="twitter:description" content="Hi! I'm Michi von Ah and this is my website.">
-    <meta property="twitter:image" content="https://michivonah.ch/images/img2.jpeg">
+    <meta property="twitter:image" content="assets/logo/favicon_256.png">
     <meta name="twitter:image:alt" content="Michi von Ah">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@michivonah">
@@ -65,6 +65,7 @@
               <a href="#about" onclick="closeNavbar();">About me</a>
               <a href="#socialmedia" onclick="closeNavbar();">Socialmedia</a>
               <a href="#projects" onclick="closeNavbar();">Projects</a>
+              <a href="#faq" onclick="closeNavbar();">FAQ</a>
               <a href="#contact" onclick="closeNavbar();">Contact me</a>
           </div>
           <a id="toggleNav" onclick="toggleSection('navbar-links', 'flex'); toggleSection('closeNavbarPlaceholder', 'block');"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
@@ -83,13 +84,21 @@
           </div>
         </div>
 
-        <div id="about">
+        <div id="about" class="section">
           <div class="inner-width">
             <h1 class="sectionTitle">About me</h1>
             <div id="aboutContent">
               <div id="aboutText" data-aos="fade-left">
                 <p>Hi, my name is <b>Michi von Ah</b> and I'm <b><var id="age">loading...</var></b> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). In my free time I like to be on the <b>computer</b> and program something (for example this website), <b>go for a walk</b> or bake a <b>cake</b>. I also like to listen to <b>music and podcasts</b>. Besides, I'm an Apple fan and would love to have a Tesla someday. This is my website and here you can find some stuff I created. Good Luck!</p>
                 <p><b>Funfact:</b> This website consists of a total of just over <u>1&prime;169</u> lines of code.</p>
+                <div id="aboutSocial">
+                  <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill" data-hover="#8a3ab9"></i></a>
+                  <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill" data-hover="#1DA1F2"></i></a>
+                  <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill" data-hover="#4267B2"></i></a>
+                  <a href="https://github.com/michivonah"><i class="ai-github-fill" data-hover="#4078c0"></i></a>
+                  <a href="https://spotify.michivonah.ch"><i class="ai-spotify-fill" data-hover="#1DB954"></i></a>
+                  <a href="https://in.michivonah.ch"><i class="ai-linkedin-fill" data-hover="#0072b1"></i></a>
+                </div>
               </div>
               <div id="aboutImg" data-aos="fade-right">
                 <img src="assets/images/michi2_blob.png">
@@ -98,7 +107,7 @@
           </div>
         </div>
 
-        <div id="socialmedia" data-aos="fade-left">
+        <div id="socialmedia" class="section" data-aos="fade-left">
           <div class="inner-width">
             <h1 class="sectionTitle">Socialmedia</h1>
             <div id="socialSelection">
@@ -154,7 +163,7 @@
                 </div>
               </div>
               <div id="insta2ImgContainer">
-                <img src="assets/socialmedia/img14.jpeg">
+                <img src="assets/socialmedia/img7.jpeg">
                 <img src="assets/socialmedia/img15.jpeg">
                 <img src="assets/socialmedia/img20.jpg">
               </div>
@@ -186,7 +195,7 @@
                   </ul>
                 </div>
                 <div>
-                  <img src="assets/socialmedia/code-snippet.png">
+                  <img src="assets/socialmedia/code-snippet-v2.png">
                 </div>
               </div>
             </div>
@@ -202,7 +211,7 @@
           </div>
         </div>
 
-        <div id="projects">
+        <div id="projects" class="section">
           <div class="inner-width">
             <h1 class="sectionTitle">Projects</h1>
 
@@ -241,7 +250,26 @@
           </div>
         </div>
 
-        <div id="contact" data-aos="fade-left">
+        <div id="faq" class="section" data-aos="fade-right">
+          <div class="inner-width">
+            <h1 class="sectionTitle" title="This are some questions.">FAQ - Frequently Asked Questions</h1>
+            <div>
+              <div class="faqObject" onclick="toggleQuestion();">
+                <i class="ai-chevron-down faq-icon"></i>
+                <h3 class="faq-question">Did you programed this website yourself?</h3>
+                <p class="faqAnswer">Yes, I programmed this website myself using HTML, CSS and JavaScript programming languages.</p>
+              </div>
+
+              <div class="faqObject" onclick="toggleQuestion();">
+                <i class="ai-chevron-down faq-icon"></i>
+                <h3 class="faq-question">How did you get into computers?</h3>
+                <p class="faqAnswer">I came to computers because I have been interested in computers and other technology since I was very young. When I was a kid, I always wanted my own laptop and often made laptops, printers and more out of cardboard. I was finally able to fulfill my dream of having my own laptop in the second grade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="section" data-aos="fade-left">
           <div class="inner-width">
             <h1 class="sectionTitle">Contact me</h1>
             <p>If you want contact me, fill out this form or send a mail to <a class="link" href="mailto:info@michivonah.ch">info@michivonah.ch</a>.</p>
@@ -314,8 +342,8 @@
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
-        AOS.init({disable: 'mobile'});
-        //AOS.init({disable: true});
+        //AOS.init({disable: 'mobile'});
+        AOS.init({disable: true});
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
@@ -389,6 +417,30 @@
           if(state == true) document.getElementById(tabs[i].id).style.display = "block";
           else document.getElementById(tabs[i].id).style.display = "none";
         }
+      }
+
+      function toggleQuestion(){
+        if(event.target.tagName == "DIV"){
+          if(event.target.getElementsByTagName('p')[0].style.display == "none"){
+            event.target.getElementsByTagName('p')[0].style.display = "block";
+            event.target.getElementsByTagName('i')[0].style.transform = "rotate(180deg)";
+          }
+          else{
+            event.target.getElementsByTagName('p')[0].style.display = "none";
+            event.target.getElementsByTagName('i')[0].style.transform = "rotate(0deg)";
+          }
+        }
+        else if(event.target.tagName == "H3" || event.target.tagName == "I"){
+          if(event.target.parentElement.getElementsByTagName('p')[0].style.display == "none"){
+            event.target.parentElement.getElementsByTagName('p')[0].style.display = "block";
+            event.target.parentElement.getElementsByTagName('i')[0].style.transform = "rotate(180deg)";
+          }
+          else{
+            event.target.parentElement.getElementsByTagName('p')[0].style.display = "none";
+            event.target.parentElement.getElementsByTagName('i')[0].style.transform = "rotate(0deg)";
+          }
+        }
+        else console.log("An error occurred while opening this section. Element: {0}", event.target);
       }
 
       function checkForm(){
