@@ -191,6 +191,7 @@ body{
      width: 80%;
      height: auto;
      user-select: none;
+     text-align: center;
    }
 
    #aboutSocial a{
