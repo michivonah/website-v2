@@ -90,7 +90,7 @@
             <div id="aboutContent">
               <div id="aboutText" data-aos="fade-left">
                 <p>Hi, my name is <b>Michi von Ah</b> and I'm <b><var id="age">loading...</var></b> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). In my free time I like to be on the <b>computer</b> and program something (for example this website), <b>go for a walk</b> or bake a <b>cake</b>. I also like to listen to <b>music and podcasts</b>. Besides, I'm an Apple fan and would love to have a Tesla someday. This is my website and here you can find some stuff I created. Good Luck!</p>
-                <p><b>Funfact:</b> This website consists of a total of just over <u>1&prime;371</u> lines of code.</p>
+                <p><b>Funfact:</b> This website consists of a total of just over <u>1&prime;501</u> lines of code.</p>
                 <div id="aboutSocial">
                   <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill" data-hover="#8a3ab9"></i></a>
                   <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill" data-hover="#1DA1F2"></i></a>
@@ -365,8 +365,8 @@
         if(localStorage.getItem('cookies') != null){
           document.getElementById('cookieBanner').style.display = "none";
         }
-        //AOS.init({disable: 'mobile'});
-        AOS.init({disable: true});
+        AOS.init({disable: 'mobile'});
+        //AOS.init({disable: true});
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
