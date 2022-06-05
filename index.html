@@ -137,10 +137,10 @@
                     <li>Lifestyle, Travel &amp; me</li>
                   </ul>
                   <button onclick="window.open('https://instagram.com/michivonah')">Follow!</button>
-                  <button>Get QR-Code</button>
+                  <button onclick="showQrcode('assets/socialmedia/insta-code.png', 'insta1Img', 'assets/socialmedia/michi_pb.jpeg');">Show QR-Code</button>
                 </div>
                 <div>
-                  <img src="assets/socialmedia/michi_pb.jpeg">
+                  <img src="assets/socialmedia/michi_pb.jpeg" id="insta1Img">
                 </div>
               </div>
             </div>
@@ -336,6 +336,18 @@
         </div>
       </div>
 
+      <div id="cookieBanner">
+        <div id="cookieImg">
+          <p id="cookieIcon">&#127850;</p>
+        </div>
+        <div id="cookieHint">
+          <h3>Hey, this site uses cookies!</h3>
+          <p>Don't worry, no cookies are used at the moment. This is just a preparation of the hint for later. Because at the moment this website is still under development.</p>
+          <button onclick="useCookie(true)">Accept!</button>
+          <button onclick="useCookie(false)">Stop!</button>
+        </div>
+      </div>
+
       <div id="scroll-top">
         <i class="ai-chevron-up"></i>
       </div>
@@ -348,6 +360,11 @@
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
+        // Check cookie banner
+        //localStorage.removeItem('cookies');
+        if(localStorage.getItem('cookies') != null){
+          document.getElementById('cookieBanner').style.display = "none";
+        }
         //AOS.init({disable: 'mobile'});
         AOS.init({disable: true});
         // hide loadingscreen
@@ -377,10 +394,15 @@
 
       function scrollDown(){
         if(navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') || navigator.userAgent.includes('Mac')){
-          window.scroll(0, 1000);
+          //window.scroll(0, 1000);
+          document.getElementById('about').scrollIntoView({
+            behavior: 'smooth'
+          });
         }
         else{
-          window.scrollBy(0, 1000);
+          document.getElementById('about').scrollIntoView({
+            behavior: 'smooth'
+          });
         }
       }
 
@@ -468,6 +490,27 @@
         if(errorCount <= 0){
           document.getElementById("contact-form").submit();
         }
+      }
+
+      function useCookie(usersChoice){
+        let cookieBanner = document.getElementById('cookieBanner');
+        cookieBanner.style.display = "none";
+        if(usersChoice == true){
+          localStorage.setItem('cookies', true);
+        }
+        else{
+          localStorage.setItem('cookies', false);
+        }
+      }
+
+      function showQrcode(src, imgId, old){
+        // src = 'assets/socialmedia/insta-code.png'
+        // old = assets/socialmedia/michi_pb.jpeg
+        // img = document.getElementById('insta1Img')
+        var src = "https://api.qrserver.com/v1/create-qr-code/?size=900x900&format=png&margin=0&data=http://insta.michivonah.ch/";
+        var image = document.getElementById(imgId).src;
+        if(image != src) document.getElementById(imgId).src = src;
+        else document.getElementById(imgId).src = old;
       }
 
       function sendWhatsapp(){
