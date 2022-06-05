@@ -192,6 +192,7 @@ body{
      height: auto;
      user-select: none;
      text-align: center;
+     margin: 0 10%;
    }
 
    #aboutSocial a{
@@ -293,6 +294,10 @@ body{
 
    #insta1Container div{
      width: 50%;
+   }
+
+   #insta1Container img{
+     border-radius: var(--borderRadius);
    }
 
    #insta2Container{
@@ -640,6 +645,54 @@ body{
      padding: 15px;
    }
 
+   /* Privacy Banner */
+   #cookieBanner{
+     display: flex; /* FLEX */
+     width: 100%;
+     height: auto;
+     min-height: 200px;
+     color: #fff;
+     background: var(--theme1);
+     font-size: 1rem;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-around;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+   }
+
+   #cookieBanner div{
+     max-width: 50%;
+   }
+
+   #cookieIcon{
+     font-size: 6rem;
+     user-select: none;
+     margin: 0;
+   }
+
+   #cookieBanner button{
+     width: 30%;
+     min-width: 80px;
+     height: auto;
+     background: #F3AD61;
+     color: #6D4534;
+     border: 2px solid #F3AD61;
+     border-radius: 4px;
+     margin: 10px;
+     padding: 8px;
+     font-size: 14px;
+     font-weight: bold;
+     transition: var(--transition);
+   }
+
+   #cookieBanner button:hover{
+     background: #6D4534;
+     color: #F3AD61;
+     border-color: #6D4534;
+   }
+
    /* Scroll to the top button */
    #scroll-top{
      width: 40px;
@@ -785,6 +838,11 @@ body{
        flex-direction: column-reverse;
      }
 
+     #aboutImg img{
+       width: 90%;
+       margin: 0 5%;
+     }
+
      /* Socialmedia Section */
      #socialSelection label{
        font-size: 0.9rem;
@@ -844,6 +902,28 @@ body{
 
      #contact button{
        margin: 20px 10px;
+     }
+
+     /* Privacy hint */
+     #cookieBanner{
+       flex-wrap: wrap;
+       padding: 0 auto;
+     }
+
+     #cookieBanner div{
+       width: 90%;
+       max-width: none;
+       margin: 0 5% 10px 5%;
+     }
+
+     #cookieBanner button{
+       width: 90%;
+       min-width: 80px;
+       margin: 10px 5%;
+     }
+
+     #cookieIcon{
+       display: none;
      }
    }
 
