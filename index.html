@@ -357,6 +357,9 @@
       // Loading
       window.addEventListener('load', () => {
         document.getElementById('scroll-top').style.display = "none";
+        // check if site is released
+        var timeToRelease = new Date('July 2, 2022 12:00:00').getTime() - new Date().getTime();
+        if(timeToRelease > 0) window.location = "https://michivonah.ch/countdown.html";
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
@@ -365,8 +368,8 @@
         if(localStorage.getItem('cookies') != null){
           document.getElementById('cookieBanner').style.display = "none";
         }
-        AOS.init({disable: 'mobile'});
-        //AOS.init({disable: true});
+        //AOS.init({disable: 'mobile'});
+        AOS.init({disable: true});
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
