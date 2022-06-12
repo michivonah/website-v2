@@ -289,7 +289,8 @@
               <input id="subject-field" type="text" name="subject" placeholder="Subject">
               <textarea id="message-text" placeholder="Your Text" minlength="6" required name="message"></textarea>
               <input id="terms" type="checkbox" name="terms" required>
-              <label for="terms" id="termsLabel"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label>
+              <!-- <label for="terms" id="termsLabel"><p>I accept that my form submissions will be shared with the formspark service to organize them. You can find out how your data is treated at formspark in their <a class="link" href="https://formspark.io/legal/privacy-policy/">privacy policy <i class="ai-link-out"></i></a>.</p></label> -->
+              <label for="terms" id="termsLabel"><p>I accept that the information I provide in the form will be shared with the WhatsApp Business API to send a message. You can find out how the data is processed by WhatsApp in the <a class="link" href="https://www.whatsapp.com/legal/business-data-processing-terms">WhatsApp privacy policy <i class="ai-link-out"></i></a>.</p></label>
               <button id="submitContactForm" name="submit" type="button" onclick="checkForm();">Send <i class="ai-send"></i></button>
             </form>
             <p>Hint: The form is currently disabled because the site is stil under construction. It can still change.</p>
@@ -359,7 +360,7 @@
         document.getElementById('scroll-top').style.display = "none";
         // check if site is released
         var timeToRelease = new Date('July 2, 2022 12:00:00').getTime() - new Date().getTime();
-        if(timeToRelease > 0) window.location = "https://michivonah.ch/countdown.html";
+        if(timeToRelease > 0 && window.location.hostname == 'michivonah.ch') window.location = "https://michivonah.ch/countdown.html";
         // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
@@ -491,7 +492,9 @@
           }
         }
         if(errorCount <= 0){
-          document.getElementById("contact-form").submit();
+          var name = document.getElementById('surname-field').value + " " + document.getElementById('lastname-field').value;
+          sendWhatsapp(name, document.getElementById('email-field').value, document.getElementById('subject-field').value, document.getElementById('message-text').value);
+          //document.getElementById("contact-form").submit();
         }
       }
 
@@ -516,8 +519,14 @@
         else document.getElementById(imgId).src = old;
       }
 
-      function sendWhatsapp(){
-        // https://wa.me/41782471516?text=
+      function sendWhatsapp(name, mail, subject, text){
+        var mail = mail.replaceAll('@', '%40');
+        var subject = subject.replaceAll(' ', '%20');
+        var text = text.replaceAll(' ', '%20');
+        var text = text.replaceAll('?', '%3F');
+        var text = text.replaceAll('!', '%21');
+        var whatsappUrl = "https://wa.me/41782471516?text=Name%3A%20" + name + "%0AE-Mail%3A%20" + mail + "%0ASubject%3A%20" + subject + "%0AMessage%3A%20" + text;
+        window.open(whatsappUrl);
       }
 
       function age(birthday, birthmonth, birthyear){
