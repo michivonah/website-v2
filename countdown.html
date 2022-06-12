@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-CH">
+<head>
+    <title>Michi von Ah</title>
+    <meta name="mobile-web-app-title" content="Michi">
+    <meta name="apple-mobile-web-app-title" content="Michi">
+    <link id="favicon" rel="icon" type="image/png" href="assets/logo/favicon_256.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo_black.svg">
+    <link rel="shortcut icon" type="image/png" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_256.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/logo/favicon_256.png">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta name="keywords" content="Michi, Michi von Ah, von Ah, personalwebsite, website, Michael von Ah, von Ah Michael, von Ah Michi, mva, mivo, Michi v.A.">
+    <meta name="author" content="Michi von Ah">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="expires" content="43200">
+
+    <meta property="og:title" content="Michi von Ah">
+    <meta property="og:description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta property="og:image" content="assets/logo/favicon_256.png">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://michivonah.ch/">
+    <meta property="og:site_name" content="Michi von Ah">
+    <meta property="twitter:title" content="Michi von Ah">
+    <meta property="twitter:description" content="Hi! I'm Michi von Ah and this is my website.">
+    <meta property="twitter:image" content="assets/logo/favicon_256.png">
+    <meta name="twitter:image:alt" content="Michi von Ah">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@michivonah">
+    <meta name="twitter:creator" content="@michivonah">
+
+    <meta name="theme-color" content="#3498db">
+    <meta name="mobile-web-app-status-bar-style" content="#2980b9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2980b9">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+      <div id="loadingScreen">
+        <div id="loader">
+        </div>
+      </div>
+
+      <nav id="navbar">
+        <div class="inner-width">
+          <a href="#" onclick="scrollToTop();"><img id="logoImg" src="assets/logo/logo_white.svg" alt="Logo"></a>
+        </div>
+      </nav>
+
+      <div id="content">
+        <div id="home">
+          <div>
+            <h1>Hey you...</h1>
+            <p>My new website is coming soon...</p>
+            <div id="countdown">
+              <div class="countdownObject">
+                <div class="countdownNum">
+                  <p id="countdownDays">00</p>
+                </div>
+                <div>
+                  <p>Days</p>
+                </div>
+              </div>
+              <div class="countdownObject">
+                <div class="countdownNum">
+                  <p id="countdownHours">00</p>
+                </div>
+                <div>
+                  <p>Hours</p>
+                </div>
+              </div>
+              <div class="countdownObject">
+                <div class="countdownNum">
+                  <p id="countdownMinutes">00</p>
+                </div>
+                <div>
+                  <p>Minutes</p>
+                </div>
+              </div>
+              <div class="countdownObject">
+                <div class="countdownNum">
+                  <p id="countdownSeconds">00</p>
+                </div>
+                <div>
+                  <p>Seconds</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/bitmoji.png">
+          </div>
+        </div>
+      </div>
+
+
+
+      <script>
+      // Loading
+      window.addEventListener('load', () => {
+        countdown();
+        window.setInterval('countdown()', 1000);
+        document.getElementById('loadingScreen').style.display = "none";
+      });
+
+      function countdown(){
+        // Thanks to https://youtu.be/uoMkz1cXOcY
+        var releaseDate = new Date('July 2, 2022 12:00:00');
+        var currentDate = new Date();
+        var difference = releaseDate.getTime() - currentDate.getTime();
+        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(difference % (1000 * 60 * 60 * 24) / (1000 * 60 *60));
+        var mins = Math.floor(difference % (1000 * 60 * 60) / (1000 * 60));
+        var secs = Math.floor(difference % (1000 * 60) / 1000);
+        console.log(difference);
+        var daysNum = document.getElementById('countdownDays');
+        var hoursNum = document.getElementById('countdownHours');
+        var minNum = document.getElementById('countdownMinutes');
+        var secNum = document.getElementById('countdownSeconds');
+        daysNum.textContent = days;
+        hoursNum.textContent = hours;
+        minNum.textContent = mins;
+        secNum.textContent = secs;
+        if(difference <= 0){
+          window.location = "https://michivonah.ch";
+        }
+      }
+      </script>
+</body>
+</html>
