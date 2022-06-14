@@ -846,11 +846,13 @@ body{
      /* Socialmedia Section */
      #socialSelection label{
        font-size: 0.9rem;
+       margin: 0 0 0 -5px;
      }
 
      .socialTab{
        width: calc(90% - (2 * var(--padding)));
        margin: 5%;
+       margin-top: none;
      }
 
      #insta2Container{
