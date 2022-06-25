@@ -27,7 +27,7 @@ body{
 
    .inner-width{
      width: 100%;
-     max-width: 1100px;
+     max-width: 1250px;
      margin: auto;
    }
 
@@ -236,8 +236,7 @@ body{
      user-select: none;
      transition: all 250ms linear;
      padding: 5px 10px;
-     margin: 10px 0;
-     margin-left: -5px;
+     margin: 10px 0 10px -5px;
    }
 
    #socialSelection label:hover, .smRadioInput:checked + .smRadioLabel{
@@ -844,15 +843,18 @@ body{
      }
 
      /* Socialmedia Section */
+     #socialSelection{
+       padding-left: calc(5% + 5px);
+     }
+
      #socialSelection label{
        font-size: 0.9rem;
-       margin: 0 0 0 -5px;
      }
 
      .socialTab{
        width: calc(90% - (2 * var(--padding)));
        margin: 5%;
-       margin-top: none;
+       margin-top: 5px;
      }
 
      #insta2Container{
