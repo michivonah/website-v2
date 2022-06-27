@@ -19,6 +19,7 @@ body{
    --borderRadius: 12px;
    --font: "open sans", sans-serif;
    --transition: all 300ms linear;
+   --buttonRadius: 4px;
    }
 
    #content{
@@ -27,7 +28,7 @@ body{
 
    .inner-width{
      width: 100%;
-     max-width: 1250px;
+     max-width: clamp(1100px, 90%, 1250px);
      margin: auto;
    }
 
@@ -145,6 +146,20 @@ body{
      align-items: center;
    }
 
+   #home h1{
+     font-weight: 600;
+     background: linear-gradient(90deg, rgba(150,237,32,1) 0%, rgba(0,212,255,1) 75%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transition: var(--transition);
+   }
+
+   #home h1:hover{
+     background: linear-gradient(90deg, rgba(150,237,32,1) 0%, rgba(0,212,255,1) 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+
    #home img{
      width: 100%;
      height: auto;
@@ -157,16 +172,19 @@ body{
      width: 100%;
      height: auto;
      min-height: 40px;
-     margin: var(--margin);
+     margin: var(--margin) 0;
+     padding: var(--padding);
      background: var(--theme2);
      color: #fff;
-     border: 2px solid #fff;
-     border-radius: var(--borderRadius);
+     border: 2px solid transparent;
+     border-radius: var(--buttonRadius);
      font-size: 1rem;
+     transition: all 200ms linear;
    }
 
    #home button:hover{
-     background: var(--theme1);
+     background: var(--theme2);
+     border: 2px solid #fff;
    }
 
    /* About Section */
@@ -269,13 +287,15 @@ body{
      margin: var(--margin);
      background: var(--theme2);
      color: #fff;
-     border: 2px solid #fff;
-     border-radius: var(--borderRadius);
+     border: 2px solid transparent;
+     border-radius: var(--buttonRadius);
      font-size: 1rem;
+     transition: all 200ms linear;
    }
 
    .socialTab button:hover{
-     background: var(--theme1);
+     background: var(--theme2);
+     border: 2px solid #fff;
    }
 
    #insta1Container{
@@ -429,19 +449,21 @@ body{
    }
 
    .project button{
-     width: 80%;
+     width: 90%;
      height: auto;
-     margin: var(--padding);
+     margin: 5%;
      padding: 10px;
      font-size: 1rem;
      background: var(--theme2);
      color: #fff;
-     border: 2px solid #fff;
-     border-radius: var(--borderRadius);
+     border: 2px solid transparent;
+     border-radius: var(--buttonRadius);
+     transition: all 200ms linear;
    }
 
    .project button:hover{
-     background: var(--theme1);
+     background: var(--theme2);
+     border: 2px solid #fff;
    }
 
    /* FAQ Section */
