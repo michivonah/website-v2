@@ -110,6 +110,32 @@ body{
 
    #navbar-links a{
      margin: 0 5px;
+     color: inherit;
+     text-decoration: none;
+   }
+
+   .navLink{
+     position: relative;
+   }
+
+   .navLink::after{
+     content: "";
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+     height: 4px;
+     background: #fff;
+     transition: all 250ms;
+     transform: scaleX(0);
+   }
+
+   .navLink:hover{
+     text-decoration: none;
+   }
+
+   .navLink:hover::after{
+     transform: scaleX(0.5);
    }
 
    #toggleNav{
@@ -607,12 +633,12 @@ body{
      border: 2px solid transparent;
      border-radius: 8px;
      margin: 20px 0;
-     padding: 5px 10px;
+     padding: 10px 10px;
    }
 
    #contact button:hover{
      background: var(--theme2);
-     border: 2px dotted;
+     border: 2px solid;
    }
 
    @keyframes shake{
