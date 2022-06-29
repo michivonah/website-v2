@@ -128,6 +128,7 @@ body{
      background: #fff;
      transition: all 250ms;
      transform: scaleX(0);
+     border-radius: 4px;
    }
 
    .navLink:hover{
@@ -173,7 +174,7 @@ body{
    }
 
    #home h1{
-     font-weight: 600;
+     font-weight: 700;
      background: linear-gradient(90deg, rgba(150,237,32,1) 0%, rgba(0,212,255,1) 75%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
@@ -791,6 +792,34 @@ body{
    }
 
    /* General stylings */
+   .link{
+     position: relative;
+     text-decoration: none;
+   }
+
+   .link::before{
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 40%;
+     background: var(--theme2);
+     z-index: -1;
+     transition: all 250ms;
+     border-radius: 2px;
+   }
+
+   .link:hover{
+     text-decoration: none !important;
+   }
+
+   .link:hover::before{
+     height: 100%;
+     transition: all 250ms;
+     cursor: pointer;
+   }
+
    a{
      color: inherit;
      text-decoration: none;
