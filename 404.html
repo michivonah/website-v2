@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-CH">
 <head>
-    <title>Michi von Ah</title>
+    <title>Not found - Michi von Ah</title>
     <meta name="mobile-web-app-title" content="Michi">
     <meta name="apple-mobile-web-app-title" content="Michi">
     <link id="favicon" rel="icon" type="image/png" href="assets/logo/favicon_256.png">
@@ -69,7 +69,7 @@
             <p>Try again!</p>
           </div>
           <div>
-            <img src="assets/bitmoji.png">
+            <img id="homeImg" src="assets/bitmoji.png">
           </div>
         </div>
       </div>
@@ -82,6 +82,12 @@
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
+          
+          function randomHomeImg(){
+        var homeImg = document.getElementById('homeImg');
+        var num = Math.floor(Math.random() * (4 - 1) + 1);
+        homeImg.src = "assets/bitmojis/error_" + num + ".png";
+      }
 
 
       </script>
