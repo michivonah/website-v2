@@ -82,7 +82,7 @@
             <button onclick="scrollDown();">Scroll down!</button>
           </div>
           <div>
-            <img src="assets/bitmoji.png">
+            <img id="homeImg" src="assets/bitmoji.png" alt="Bitmoji">
           </div>
         </div>
 
@@ -92,7 +92,7 @@
             <div id="aboutContent">
               <div id="aboutText" data-aos="fade-left">
                 <p>Hi, my name is <b>Michi von Ah</b> and I'm <b><var id="age">loading...</var></b> years old. I'm interested in smartphones, computers and electromobility (mainly Tesla). In my free time I like to be on the <b>computer</b> and program something (for example this website), <b>go for a walk</b> or bake a <b>cake</b>. I also like to listen to <b>music and podcasts</b>. Besides, I'm an Apple fan and would love to have a Tesla someday. This is my website and here you can find some stuff I created. Good Luck!</p>
-                <p><b>Funfact:</b> This website consists of a total of just over <u>1&prime;646</u> lines of code.</p>
+                <p><b>Funfact:</b> This website consists of a total of just over <u>1&prime;760</u> lines of code.</p>
                 <div id="aboutSocial">
                   <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill" data-hover="#8a3ab9"></i></a>
                   <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill" data-hover="#1DA1F2"></i></a>
@@ -103,7 +103,7 @@
                 </div>
               </div>
               <div id="aboutImg" data-aos="fade-right">
-                <img src="assets/images/michi2_blob.png" id="aboutImgImg" onclick="document.getElementById('aboutImgImg').style.animation = 'shake 250ms ease';">
+                <img src="assets/images/michi2_blob.png" alt="Michi von Ah" id="aboutImgImg" onclick="document.getElementById('aboutImgImg').style.animation = 'shake 250ms ease';">
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
                   <button onclick="showQrcode('assets/socialmedia/insta-code.png', 'insta1Img', 'assets/socialmedia/michi_pb.jpeg');">Show QR-Code</button>
                 </div>
                 <div>
-                  <img src="assets/socialmedia/michi_pb.jpeg" id="insta1Img">
+                  <img src="assets/socialmedia/michi_pb.jpeg" alt="Michi" id="insta1Img">
                 </div>
               </div>
             </div>
@@ -163,13 +163,21 @@
                   <button onclick="window.open('https://instagram.com/vompictures')">Follow now!</button>
                 </div>
                 <div>
-                  <img src="assets/socialmedia/img14.jpeg">
+                  <div class="insta2FirstImg" data-location="Giswilerstock">
+                    <img src="assets/socialmedia/img14.jpeg" alt="Giswilerstock">
+                  </div>
                 </div>
               </div>
               <div id="insta2ImgContainer">
-                <img src="assets/socialmedia/img7.jpeg">
-                <img src="assets/socialmedia/img15.jpeg">
-                <img src="assets/socialmedia/img20.jpg">
+                <div class="insta2ImgDiv"  data-location="Sachseln">
+                  <img class="insta2Img" src="assets/socialmedia/img7.jpeg" alt="Sachseln">
+                </div>
+                <div class="insta2ImgDiv" data-location="Giswilerstock">
+                  <img class="insta2Img" src="assets/socialmedia/img15.jpeg" alt="Giswilerstock">
+                </div>
+                <div class="insta2ImgDiv" data-location="Lugano">
+                  <img class="insta2Img" src="assets/socialmedia/img20.jpg" alt="Lugano">
+                </div>
               </div>
             </div>
 
@@ -182,7 +190,7 @@
                   </ul>
                 </div>
                 <div>
-                  <img src="assets/tweets/tweet1.png">
+                  <img src="assets/tweets/tweet1.png" alt="Tweet">
                 </div>
               </div>
             </div>
@@ -199,7 +207,7 @@
                   </ul>
                 </div>
                 <div>
-                  <img src="assets/socialmedia/code-snippet-v2.png">
+                  <img src="assets/socialmedia/code-snippet-v2.png" alt="Code Snippet">
                 </div>
               </div>
             </div>
@@ -210,7 +218,7 @@
                 <li></li>
                 <li>Competence tests: HTML &amp; CSS</li>
               </ul>
-              <img src="">
+              <img src="" alt="LinkedIn">
             </div>
           </div>
         </div>
@@ -374,8 +382,10 @@
         if(localStorage.getItem('cookies') != null){
           document.getElementById('cookieBanner').style.display = "none";
         }
-        //AOS.init({disable: 'mobile'});
-        AOS.init({disable: true});
+        // random home img
+        randomHomeImg();
+        AOS.init({disable: 'mobile'});
+        //AOS.init({disable: true});
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
@@ -532,6 +542,12 @@
         var text = text.replaceAll('!', '%21');
         var whatsappUrl = "https://wa.me/41782471516?text=Name%3A%20" + name + "%0AE-Mail%3A%20" + mail + "%0ASubject%3A%20" + subject + "%0AMessage%3A%20" + text;
         window.open(whatsappUrl);
+      }
+
+      function randomHomeImg(){
+        var homeImg = document.getElementById('homeImg');
+        var num = Math.floor(Math.random() * (4 - 1) + 1);
+        homeImg.src = "assets/bitmojis/home_" + num + ".png";
       }
 
       function age(birthday, birthmonth, birthyear){
