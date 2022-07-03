@@ -79,16 +79,17 @@
       <script>
       // Loading
       window.addEventListener('load', () => {
+        // random error image
+        randomHomeImg();
         // hide loadingscreen
         document.getElementById('loadingScreen').style.display = "none";
       });
-          
-          function randomHomeImg(){
+
+      function randomHomeImg(){
         var homeImg = document.getElementById('homeImg');
         var num = Math.floor(Math.random() * (4 - 1) + 1);
         homeImg.src = "assets/bitmojis/error_" + num + ".png";
       }
-
 
       </script>
 </body>
