@@ -11,6 +11,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="assets/logo/favicon_256.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_256.png">
     <link rel="apple-touch-icon" sizes="167x167" href="assets/logo/favicon_256.png">
+    <link rel="canonical" href="https://michivonah.ch">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script src="https://unpkg.com/akar-icons-fonts"></script>
@@ -18,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
     <meta charset="UTF-8">
     <meta name="description" content="Hi! I'm Michi von Ah and this is my website.">
-    <meta name="keywords" content="Michi, Michi von Ah, von Ah, personalwebsite, website, Michael von Ah, von Ah Michael, von Ah Michi, mva, mivo, Michi v.A.">
+    <meta name="keywords" content="Michi, Michi von Ah, von Ah, personalwebsite, website, Michael von Ah, von Ah Michael, von Ah Michi, mva, mivo, Michi v.A., Informatiker, informatics, IT, portfolio, webdev, developer, lifestyle, Webdeveloper, Develoment, 3K">
     <meta name="author" content="Michi von Ah">
     <meta name="robots" content="index">
     <meta http-equiv="expires" content="43200">
@@ -162,9 +163,9 @@
                   </ul>
                   <button onclick="window.open('https://instagram.com/vompictures')">Follow now!</button>
                 </div>
-                <div>
-                  <div class="insta2FirstImg" data-location="Giswilerstock">
-                    <img src="assets/socialmedia/img14.jpeg" alt="Giswilerstock">
+                <div id="insta2FirstImgContainer">
+                  <div id="insta2FirstImage" class="insta2FirstImg" data-location="Giswilerstock">
+                    <img class="insta2Img1" src="assets/socialmedia/img14.jpeg" alt="Giswilerstock">
                   </div>
                 </div>
               </div>
@@ -314,9 +315,9 @@
           <div id="footerContent">
             <p></p>
             <a href="#footerExpanded" onclick="toggleSection('footerExpanded', 'flex');">Imprint & Copyright</a>
-            <a href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
-            <a href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
-            <a href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
+            <a class="socialLink" href="https://www.instagram.com/michivonah/"><i class="ai-instagram-fill"></i></a>
+            <a class="socialLink" href="https://twitter.com/michivonah"><i class="ai-twitter-fill"></i></a>
+            <a class="socialLink" href="https://fb.com/vonahmichi"><i class="ai-facebook-fill"></i></a>
           </div>
 
           <div id="footerExpanded">
@@ -372,9 +373,8 @@
       window.addEventListener('load', () => {
         document.getElementById('scroll-top').style.display = "none";
         // check if site is released
-        var timeToRelease = new Date('August 14, 2022 12:00:00').getTime() - new Date().getTime();
+        var timeToRelease = new Date('August 7, 2022 12:00:00').getTime() - new Date().getTime();
         if(timeToRelease > 0 && window.location.hostname == 'michivonah.ch') window.location = "https://michivonah.ch/countdown.html";
-        // Instagram: https://www.instagram.com/vompictures/?__a=1
         age(16, 09, 2005);
         toggleSocialmedia();
         // Check cookie banner
@@ -501,8 +501,10 @@
             currentElement.style.animation = null;
           }
           else{
+            currentElement.classList.add("animate");
             currentElement.style.background = "var(--red)";
             currentElement.style.animation = "shake 250ms ease";
+            currentElement.classList.remove("animate");
             errorCount++;
           }
         }
