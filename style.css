@@ -20,6 +20,7 @@ body{
    --font: "open sans", sans-serif;
    --transition: all 300ms linear;
    --buttonRadius: 4px;
+   /*cursor: url(assets/blob1.svg), auto;*/
    }
 
    #content{
@@ -376,6 +377,14 @@ body{
 
    .insta2FirstImg{
      position: relative;
+     margin: auto;
+     padding: 0;
+   }
+
+   .insta2FirstImg img{
+     border-radius: var(--borderRadius);
+     transition: all 300ms linear;
+     user-select: none;
    }
 
    .insta2FirstImg::after{
@@ -397,6 +406,18 @@ body{
      font-family: var(--font);
      font-size: 1.2rem;
      font-weight: 700;
+   }
+
+   .insta2FirstImg:hover .insta2Img1{
+     border-radius: 50% !important;
+   }
+
+   .insta2FirstImg:hover::after{
+     border-radius: 50%;
+     background: rgba(0, 0, 0, 0.5);
+     content: attr(data-location);
+     display: flex;
+     transition: all 300ms linear;
    }
 
    #insta2ImgContainer{
@@ -456,7 +477,7 @@ body{
      border-radius: 50%;
    }
 
-   .insta2ImgDiv:hover::after, .insta2FirstImg:hover::after{
+   .insta2ImgDiv:hover::after{
      border-radius: 50%;
      background: rgba(0, 0, 0, 0.5);
      content: attr(data-location);
@@ -756,9 +777,25 @@ body{
      padding: 15px;
    }
 
+   .socialLink{
+     margin: 0 5px;
+     padding: 10px;
+     text-decoration: none !important;
+     font-size: 1.4rem;
+     color: inherit;
+     transition: var(--transition);
+   }
+
+   .socialLink:hover{
+     text-decoration: none !important;
+     background: var(--theme2);
+     border-radius: 50%;
+   }
+
+
    /* Privacy Banner */
    #cookieBanner{
-     display: flex; /* FLEX */
+     display: none; /* FLEX */
      width: 100%;
      height: auto;
      min-height: 200px;
@@ -857,30 +894,21 @@ body{
    /* General stylings */
    .link{
      position: relative;
-     text-decoration: none;
-   }
-
-   .link::before{
-     content: "";
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     height: 40%;
-     background: var(--theme2);
-     z-index: -1;
-     transition: all 250ms;
-     border-radius: 2px;
+     text-decoration: none !important;
+     background-image: linear-gradient(25deg, var(--theme2) 0%, var(--theme2) 100%);
+     background-repeat: no-repeat;
+     background-size: 100% 40%;
+     background-position: 0 110%;
+     transition: all 300ms;
+     cursor: pointer;
    }
 
    .link:hover{
-     text-decoration: none !important;
+     background-size: 100% 100%;
    }
 
-   .link:hover::before{
-     height: 100%;
-     transition: all 250ms;
-     cursor: pointer;
+   .animate{
+     transition: var(--transition);
    }
 
    a{
