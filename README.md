@@ -1,5 +1,6 @@
 # Michi Website 2.0
-### CLEARER, FASTER & FRESHER THEN BEFORE! - Supercharged with new ideas!
+> ### CLEARER, FASTER & FRESHER THEN BEFORE! - Supercharged with new ideas!
+> Release 7th august 2022
 - New design
 - New content
 - New possibilities
