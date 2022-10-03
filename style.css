@@ -254,7 +254,7 @@ body{
      text-decoration: none !important;
    }
 
-   #aboutSocial a:hover:nth-child(1){ color: #8a3ab9; }
+   #aboutSocial a:hover:nth-child(1){ color: #e4405f; }
 
    #aboutSocial a:hover:nth-child(2){ color: #1DA1F2; }
 
@@ -271,9 +271,13 @@ body{
      margin: auto;
    }
 
-   #socialSelection input[type=radio]{
-     display: none;
+   #socialSelection{
+     margin: 10px auto 0 auto;
    }
+
+   #socialSelection input[type=radio]{
+    display: none;
+  }
 
    #socialSelection label{
      font-size: 1.1rem;
