@@ -137,7 +137,7 @@
                 <div>
                   <h3>Instagram @michivonah</h3>
                   <ul>
-                    <li>200+ Followers</li>
+                    <li>220+ Followers</li>
                     <li>10+ Posts</li>
                     <li>Lifestyle, Travel &amp; me</li>
                   </ul>
@@ -402,20 +402,7 @@
       });
 
       function scrollToTop(){
-        if(navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') || navigator.userAgent.includes('Mac')){
-          window.scroll(0, 0);
-        }
-        else{
-          var speed = 500;
-          var time = 15;
-          var step = (window.scrollY * -1) / (speed / time),
-          scroll = setInterval(function(){
-          if (window.scrollY != 0){
-              window.scrollBy(0, step);
-          }
-          else clearInterval(scroll);
-          },time);
-        }
+        window.scroll(0, 0);
       }
 
       function scrollDown(){
