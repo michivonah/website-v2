@@ -406,17 +406,7 @@
       }
 
       function scrollDown(){
-        if(navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') || navigator.userAgent.includes('Mac')){
-          //window.scroll(0, 1000);
-          document.getElementById('about').scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-        else{
-          document.getElementById('about').scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
+        window.scroll(0, window.innerHeight - 56);
       }
 
       function toggleSection(sectionName, type){
