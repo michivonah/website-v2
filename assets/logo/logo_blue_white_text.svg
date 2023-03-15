@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" width="2840" height="1080" 
+viewBox="0 0 2840 1080">
+  <defs>
+    <clipPath id="clip-Logo_text_-_blue_1">
+      <rect width="2840" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_text_-_blue_1" data-name="Logo text - blue – 1" 
+clip-path="url(#clip-Logo_text_-_blue_1)">
+    <g id="Logo">
+      <g id="Border" transform="translate(160 160)" fill="none" 
+stroke="#3498db" stroke-width="20">
+        <rect width="760" height="760" stroke="none"/>
+        <rect x="10" y="10" width="740" height="740" fill="none"/>
+      </g>
+      <line id="Horizontal" y2="755" transform="translate(540.5 161.5)" 
+fill="none" stroke="#3498db" stroke-width="20"/>
+      <line id="Vertical" x2="760" transform="translate(160.5 540.5)" 
+fill="none" stroke="#3498db" stroke-width="20"/>
+      <line id="Top-Left" x2="368" y2="364" transform="translate(172 176)" 
+fill="none" stroke="#3498db" stroke-width="20"/>
+      <line id="Top-Right" x1="367" y2="364" transform="translate(541.5 
+175.5)" fill="none" stroke="#3498db" stroke-width="20"/>
+    </g>
+    <text id="Michi" transform="translate(1133 760)" fill="#fff" 
+font-size="532" font-family="Helvetica"><tspan x="0" 
+y="0">Michi</tspan></text>
+  </g>
+</svg>
+
