@@ -70,7 +70,7 @@
               <a href="#socialmedia" onclick="closeNavbar();" class="navLink">Socialmedia</a>
               <a href="#projects" onclick="closeNavbar();" class="navLink">Projects</a>
               <a href="#faq" onclick="closeNavbar();" class="navLink">FAQ</a>
-              <a href="#contact" onclick="closeNavbar();" class="navLink">Contact me</a>
+              <!-- <a href="#contact" onclick="closeNavbar();" class="navLink">Contact me</a> -->
           </div>
           <a id="toggleNav" onclick="toggleSection('navbar-links', 'flex'); toggleSection('closeNavbarPlaceholder', 'block');"><i id="toggle-nav-icon" class="ai-text-align-right"></i></a>
         </div>
@@ -393,7 +393,7 @@
         // check if site is released
         var timeToRelease = new Date('August 7, 2022 12:00:00').getTime() - new Date().getTime();
         if(timeToRelease > 0 && window.location.hostname == 'michivonah.ch') window.location = "https://michivonah.ch/countdown.html";
-        age(16, 09, 2005);
+        age(16, 9, 2005);
         toggleSocialmedia();
         // Check cookie banner
         //localStorage.removeItem('cookies');
