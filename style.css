@@ -777,6 +777,10 @@ body{
      padding-bottom: 30px;
    }
 
+   #imprint{
+    display: none;
+   }
+
    #footerContent{
      width: calc(100% - 30px);
      height: auto;
